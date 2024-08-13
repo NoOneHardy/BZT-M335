@@ -1,0 +1,34 @@
+:host {
+  height: 100%;
+  width: 100%;
+
+  .nav-point {
+    display: flex;
+    align-items: center;
+    column-gap: .05em;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    padding: .625em;
+    background-color: transparent;
+    color: #FFFFFFFF;
+    font-size: .85em;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+
+    .icon {
+      position: relative;
+      height: 1.85em;
+      width: 1.85em;
+    }
+
+    &.mobile {
+      .icon {
+        height: 2.5em;
+        width: 2.5em;
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+<ng-container *ngIf="icon && route">
+  <a [routerLink]="route" class="nav-point"
+     routerLinkActive="active"
+     #rla="routerLinkActive"
+     [class.mobile]="mobile"
+     [routerLinkActiveOptions]="{exact: true}">
+    <div class="icon">
+      <img [ngSrc]="getIcon(rla.isActive)" [alt]="icon" fill>
+    </div>
+    <span class="name" *ngIf="!mobile">{{ displayName }}</span>
+  </a>
+</ng-container>
