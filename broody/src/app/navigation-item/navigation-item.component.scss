@@ -1,0 +1,27 @@
+:host {
+  .nav-point {
+    display: flex;
+    align-items: center;
+    column-gap: .4em;
+    justify-content: center;
+    height: 2em;
+    margin-bottom: .875em;
+    background-color: var(--bro-color-primary);
+    box-shadow: 0 0 .625em #000;
+    color: #FFF;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color .2s ease-in-out;
+
+    .icon {
+      position: relative;
+      height: 1.6em;
+      width: 1.6em;
+    }
+
+    .name {
+      font-size: .875em;
+    }
+  }
+}

@@ -1,0 +1,8 @@
+<ng-container *ngIf="icon && route">
+  <a [routerLink]="route" class="nav-point">
+    <div class="icon">
+      <img [ngSrc]="getIcon()" [alt]="icon" fill>
+    </div>
+    <span class="name">{{ displayName }}</span>
+  </a>
+</ng-container>

@@ -1,19 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import {NavigationComponent} from '../navigation/navigation.component'
+import {Component} from '@angular/core'
+import {ContentComponent} from '../content/content.component'
 
 @Component({
   standalone: true,
   imports: [
-    NavigationComponent
+    ContentComponent
   ],
   selector: 'app-overview',
   templateUrl: './overview.component.html',
   styleUrls: ['./overview.component.scss'],
 })
-export class OverviewComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {}
-
+export class OverviewComponent {
 }

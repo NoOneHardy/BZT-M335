@@ -1,0 +1,40 @@
+:host {
+  display: block;
+  height: 100%;
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 4.5em;
+    width: 100%;
+    padding: 0 1.5em;
+    background-color: var(--bro-color-primary);
+    box-shadow: 0 .125em .625em #000;
+    transition: background-color .2s ease-in-out;
+
+    a {
+      display: block;
+      position: absolute;
+      left: 1.5em;
+      height: 1.5em;
+      width: 1.5em;
+      transition: transform .2s ease-in-out;
+
+      &:hover {
+        transform: scale(.9);
+      }
+    }
+
+    h1 {
+      font-size: 1.15em;
+    }
+  }
+
+  .content {
+    display: block;
+    height: calc(100% - 4.5em);
+    padding: 2em 1.5em 0 1.5em;
+  }
+}

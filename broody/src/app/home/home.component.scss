@@ -1,0 +1,15 @@
+:host {
+  display: block;
+  height: 100%;
+
+  main.content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding-bottom: 3.5em;
+
+    nav {
+      margin-top: auto;
+    }
+  }
+}

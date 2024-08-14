@@ -1,15 +1,11 @@
 import {Component, inject, OnDestroy, OnInit} from '@angular/core';
-import {IonicModule} from '@ionic/angular'
 import {RouterModule} from '@angular/router'
-import {NavigationComponent} from './navigation/navigation.component'
 import {FirebaseService} from './services/firebase.service'
 
 @Component({
   standalone: true,
   imports: [
-    IonicModule,
-    RouterModule,
-    NavigationComponent
+    RouterModule
   ],
   selector: 'app-root',
   templateUrl: 'app.component.html',

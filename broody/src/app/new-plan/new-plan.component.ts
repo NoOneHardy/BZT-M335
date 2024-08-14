@@ -1,52 +1,17 @@
-import {Component, inject, OnInit} from '@angular/core';
-import {PhotoService, UserPhoto} from '../services/photo.service'
-import {ActionSheetController, IonicModule} from '@ionic/angular'
+import {Component} from '@angular/core';
 import {CommonModule} from '@angular/common'
-import {NavigationComponent} from '../navigation/navigation.component'
+import {ContentComponent} from '../content/content.component'
 
 @Component({
   standalone: true,
   imports: [
-    IonicModule,
     CommonModule,
-    NavigationComponent
+    ContentComponent
   ],
   selector: 'app-new-plan',
   templateUrl: 'new-plan.component.html',
   styleUrls: ['new-plan.component.scss']
 })
-export class NewPlanComponent implements OnInit {
-  private actionSheetController = inject(ActionSheetController)
-  protected photoService = inject(PhotoService)
+export class NewPlanComponent {
 
-  addPhotoToGallery() {
-    this.photoService.addNewToGallery()
-  }
-
-  async ngOnInit() {
-    await this.photoService.loadSaved()
-  }
-
-  async showActionSheet(photo: UserPhoto, position: number) {
-    const actionSheet = await this.actionSheetController.create({
-      header: 'Photos',
-      buttons: [
-        {
-          text: 'Delete',
-          role: 'destructive',
-          icon: 'trash',
-          handler: () => {
-            this.photoService.deletePicture(photo, position)
-          }
-        },
-        {
-          text: 'Cancel',
-          icon: 'close',
-          role: 'cancel',
-          handler: () => {}
-        }
-      ]
-    })
-    await actionSheet.present()
-  }
 }

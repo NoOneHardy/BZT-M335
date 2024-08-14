@@ -1,5 +1,5 @@
-import {Injectable, OnDestroy, OnInit} from '@angular/core';
-import {interval, Subject, takeUntil, timer} from 'rxjs'
+import {Injectable, OnDestroy} from '@angular/core';
+import {Subject, takeUntil, timer} from 'rxjs'
 import {Device} from '@capacitor/device'
 
 @Injectable({

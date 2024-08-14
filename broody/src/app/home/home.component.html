@@ -1,7 +1,14 @@
-<p>home works!</p>
+<app-content [name]="getGreeting()">
+  <main class="content">
 
-<div *ngFor="let plan of plans()">
-  <p>{{plan.name}}</p>
-</div>
+    <h2>Deine letzten Trainings</h2>
+    <div *ngFor="let plan of plans()">
+      <p>{{ plan.name }}</p>
+    </div>
 
-<app-navigation />
+    <nav>
+      <app-navigation-item icon="add" route="new" displayName="Erstellen"/>
+      <app-navigation-item icon="dumbbell" route="overview" displayName="Trainingspläne"/>
+    </nav>
+  </main>
+</app-content>

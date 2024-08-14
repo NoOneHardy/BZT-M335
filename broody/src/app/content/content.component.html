@@ -1,0 +1,10 @@
+<header *ngIf="route || name">
+  <a [routerLink]="route" *ngIf="route">
+    <img ngSrc="assets/icon/arrow-back.svg" alt="Back" fill>
+  </a>
+  <h1 *ngIf="name">{{ name }}</h1>
+</header>
+
+<div class="content">
+  <ng-content/>
+</div>
