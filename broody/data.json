@@ -1,7 +1,1050 @@
 {
-  "plans": [
+  "machines": [
     {
-      "name": "Beine & Bauch"
+      "id": "0",
+      "name": "Brustpresse positiv",
+      "configurations": [
+        {
+          "name": "Sätze",
+          "type": "number",
+          "suffix": ""
+        },
+        {
+          "name": "Gewicht",
+          "type": "number",
+          "suffix": "kg"
+        },
+        {
+          "name": "Minimum",
+          "type": "number",
+          "suffix": "reps"
+        },
+        {
+          "name": "Maximum",
+          "type": "number",
+          "suffix": "reps"
+        },
+        {
+          "name": "Pause",
+          "type": "number",
+          "suffix": "s"
+        },
+        {
+          "name": "Sitz",
+          "type": "number",
+          "suffix": ""
+        }
+      ]
+    },
+    {
+      "id": "1",
+      "name": "Bankdrücken flach",
+      "configurations": [
+        {
+          "name": "Sätze",
+          "type": "number",
+          "suffix": ""
+        },
+        {
+          "name": "Gewicht",
+          "type": "number",
+          "suffix": "kg"
+        },
+        {
+          "name": "Minimum",
+          "type": "number",
+          "suffix": "reps"
+        },
+        {
+          "name": "Maximum",
+          "type": "number",
+          "suffix": "reps"
+        },
+        {
+          "name": "Pause",
+          "type": "number",
+          "suffix": "s"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Wide Chest",
+      "configurations": [
+        {
+          "name": "Sätze",
+          "type": "number",
+          "suffix": ""
+        },
+        {
+          "name": "Gewicht",
+          "type": "number",
+          "suffix": "kg"
+        },
+        {
+          "name": "Minimum",
+          "type": "number",
+          "suffix": "reps"
+        },
+        {
+          "name": "Maximum",
+          "type": "number",
+          "suffix": "reps"
+        },
+        {
+          "name": "Pause",
+          "type": "number",
+          "suffix": "s"
+        },
+        {
+          "name": "Sitz",
+          "type": "number",
+          "suffix": ""
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Butterfly Kurzhantel flach",
+      "configurations": [
+        {
+          "name": "Sätze",
+          "type": "number",
+          "suffix": ""
+        },
+        {
+          "name": "Gewicht",
+          "type": "number",
+          "suffix": "kg"
+        },
+        {
+          "name": "Minimum",
+          "type": "number",
+          "suffix": "reps"
+        },
+        {
+          "name": "Maximum",
+          "type": "number",
+          "suffix": "reps"
+        },
+        {
+          "name": "Pause",
+          "type": "number",
+          "suffix": "s"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "name": "Bizepscurls SZ Stange",
+      "configurations": [
+        {
+          "name": "Sätze",
+          "type": "number",
+          "suffix": ""
+        },
+        {
+          "name": "Gewicht",
+          "type": "number",
+          "suffix": "kg"
+        },
+        {
+          "name": "Minimum",
+          "type": "number",
+          "suffix": "reps"
+        },
+        {
+          "name": "Maximum",
+          "type": "number",
+          "suffix": "reps"
+        },
+        {
+          "name": "Pause",
+          "type": "number",
+          "suffix": "s"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "name": "Hammercurls Kurzhantel stehend",
+      "configurations": [
+        {
+          "name": "Sätze",
+          "type": "number",
+          "suffix": ""
+        },
+        {
+          "name": "Gewicht",
+          "type": "number",
+          "suffix": "kg"
+        },
+        {
+          "name": "Minimum",
+          "type": "number",
+          "suffix": "reps"
+        },
+        {
+          "name": "Maximum",
+          "type": "number",
+          "suffix": "reps"
+        },
+        {
+          "name": "Pause",
+          "type": "number",
+          "suffix": "s"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "name": "Scottcurls SZ Stange",
+      "configurations": [
+        {
+          "name": "Sätze",
+          "type": "number",
+          "suffix": ""
+        },
+        {
+          "name": "Gewicht",
+          "type": "number",
+          "suffix": "kg"
+        },
+        {
+          "name": "Minimum",
+          "type": "number",
+          "suffix": "reps"
+        },
+        {
+          "name": "Maximum",
+          "type": "number",
+          "suffix": "reps"
+        },
+        {
+          "name": "Pause",
+          "type": "number",
+          "suffix": "s"
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "name": "Beinheben Barren gesteckt",
+      "configurations": [
+        {
+          "name": "Sätze",
+          "type": "number",
+          "suffix": ""
+        },
+        {
+          "name": "Minimum",
+          "type": "number",
+          "suffix": "reps"
+        },
+        {
+          "name": "Maximum",
+          "type": "number",
+          "suffix": "reps"
+        },
+        {
+          "name": "Pause",
+          "type": "number",
+          "suffix": "s"
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "name": "Bauchbeuger Tau",
+      "configurations": [
+        {
+          "name": "Sätze",
+          "type": "number",
+          "suffix": ""
+        },
+        {
+          "name": "Gewicht",
+          "type": "number",
+          "suffix": "kg"
+        },
+        {
+          "name": "Minimum",
+          "type": "number",
+          "suffix": "reps"
+        },
+        {
+          "name": "Maximum",
+          "type": "number",
+          "suffix": "reps"
+        },
+        {
+          "name": "Pause",
+          "type": "number",
+          "suffix": "s"
+        },
+        {
+          "name": "Höhe",
+          "type": "number",
+          "suffix": ""
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "name": "Rotation Medizin Ball",
+      "configurations": [
+        {
+          "name": "Sätze",
+          "type": "number",
+          "suffix": ""
+        },
+        {
+          "name": "Gewicht",
+          "type": "number",
+          "suffix": "kg"
+        },
+        {
+          "name": "Minimum",
+          "type": "number",
+          "suffix": "reps"
+        },
+        {
+          "name": "Maximum",
+          "type": "number",
+          "suffix": "reps"
+        },
+        {
+          "name": "Pause",
+          "type": "number",
+          "suffix": "s"
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "name": "Bulgarian Split Squat",
+      "configurations": [
+        {
+          "name": "Sätze",
+          "type": "number",
+          "suffix": ""
+        },
+        {
+          "name": "Gewicht",
+          "type": "number",
+          "suffix": "kg"
+        },
+        {
+          "name": "Minimum",
+          "type": "number",
+          "suffix": "reps"
+        },
+        {
+          "name": "Maximum",
+          "type": "number",
+          "suffix": "reps"
+        },
+        {
+          "name": "Pause",
+          "type": "number",
+          "suffix": "s"
+        }
+      ]
+    },
+    {
+      "id": "11",
+      "name": "V-Squat",
+      "configurations": [
+        {
+          "name": "Sätze",
+          "type": "number",
+          "suffix": ""
+        },
+        {
+          "name": "Gewicht",
+          "type": "number",
+          "suffix": "kg"
+        },
+        {
+          "name": "Minimum",
+          "type": "number",
+          "suffix": "reps"
+        },
+        {
+          "name": "Maximum",
+          "type": "number",
+          "suffix": "reps"
+        },
+        {
+          "name": "Pause",
+          "type": "number",
+          "suffix": "s"
+        }
+      ]
+    },
+    {
+      "id": "12",
+      "name": "Linear Leg Press",
+      "configurations": [
+        {
+          "name": "Sätze",
+          "type": "number",
+          "suffix": ""
+        },
+        {
+          "name": "Gewicht",
+          "type": "number",
+          "suffix": "kg"
+        },
+        {
+          "name": "Minimum",
+          "type": "number",
+          "suffix": "reps"
+        },
+        {
+          "name": "Maximum",
+          "type": "number",
+          "suffix": "reps"
+        },
+        {
+          "name": "Pause",
+          "type": "number",
+          "suffix": "s"
+        }
+      ]
+    },
+    {
+      "id": "13",
+      "name": "Beinbeuger stehend",
+      "configurations": [
+        {
+          "name": "Sätze",
+          "type": "number",
+          "suffix": ""
+        },
+        {
+          "name": "Gewicht",
+          "type": "number",
+          "suffix": "kg"
+        },
+        {
+          "name": "Minimum",
+          "type": "number",
+          "suffix": "reps"
+        },
+        {
+          "name": "Maximum",
+          "type": "number",
+          "suffix": "reps"
+        },
+        {
+          "name": "Pause",
+          "type": "number",
+          "suffix": "s"
+        },
+        {
+          "name": "Winkel",
+          "type": "number",
+          "suffix": ""
+        },
+        {
+          "name": "Platte",
+          "type": "number",
+          "suffix": ""
+        },
+        {
+          "name": "Rolle",
+          "type": "number",
+          "suffix": ""
+        }
+      ]
+    },
+    {
+      "id": "14",
+      "name": "Beinstrecker",
+      "configurations": [
+        {
+          "name": "Sätze",
+          "type": "number",
+          "suffix": ""
+        },
+        {
+          "name": "Gewicht",
+          "type": "number",
+          "suffix": "kg"
+        },
+        {
+          "name": "Minimum",
+          "type": "number",
+          "suffix": "reps"
+        },
+        {
+          "name": "Maximum",
+          "type": "number",
+          "suffix": "reps"
+        },
+        {
+          "name": "Pause",
+          "type": "number",
+          "suffix": "s"
+        },
+        {
+          "name": "Winkel",
+          "type": "number",
+          "suffix": ""
+        },
+        {
+          "name": "Platte",
+          "type": "number",
+          "suffix": ""
+        },
+        {
+          "name": "Rolle",
+          "type": "number",
+          "suffix": ""
+        }
+      ]
+    },
+    {
+      "id": "15",
+      "name": "Wadenpresse stehend",
+      "configurations": [
+        {
+          "name": "Sätze",
+          "type": "number",
+          "suffix": ""
+        },
+        {
+          "name": "Gewicht",
+          "type": "number",
+          "suffix": "kg"
+        },
+        {
+          "name": "Minimum",
+          "type": "number",
+          "suffix": "reps"
+        },
+        {
+          "name": "Maximum",
+          "type": "number",
+          "suffix": "reps"
+        },
+        {
+          "name": "Pause",
+          "type": "number",
+          "suffix": "s"
+        },
+        {
+          "name": "Polster",
+          "type": "number",
+          "suffix": ""
+        }
+      ]
+    },
+    {
+      "id": "16",
+      "name": "Shoulder press",
+      "configurations": [
+        {
+          "name": "Sätze",
+          "type": "number",
+          "suffix": ""
+        },
+        {
+          "name": "Gewicht",
+          "type": "number",
+          "suffix": "kg"
+        },
+        {
+          "name": "Minimum",
+          "type": "number",
+          "suffix": "reps"
+        },
+        {
+          "name": "Maximum",
+          "type": "number",
+          "suffix": "reps"
+        },
+        {
+          "name": "Pause",
+          "type": "number",
+          "suffix": "s"
+        },
+        {
+          "name": "Sitz",
+          "type": "number",
+          "suffix": ""
+        }
+      ]
+    },
+    {
+      "id": "17",
+      "name": "Schulterdrücken vorne",
+      "configurations": [
+        {
+          "name": "Sätze",
+          "type": "number",
+          "suffix": ""
+        },
+        {
+          "name": "Gewicht",
+          "type": "number",
+          "suffix": "kg"
+        },
+        {
+          "name": "Minimum",
+          "type": "number",
+          "suffix": "reps"
+        },
+        {
+          "name": "Maximum",
+          "type": "number",
+          "suffix": "reps"
+        },
+        {
+          "name": "Pause",
+          "type": "number",
+          "suffix": "s"
+        },
+        {
+          "name": "Sitz",
+          "type": "number",
+          "suffix": ""
+        },
+        {
+          "name": "Lehne",
+          "type": "number",
+          "suffix": ""
+        }
+      ]
+    },
+    {
+      "id": "18",
+      "name": "Seitheben",
+      "configurations": [
+        {
+          "name": "Sätze",
+          "type": "number",
+          "suffix": ""
+        },
+        {
+          "name": "Gewicht",
+          "type": "number",
+          "suffix": "kg"
+        },
+        {
+          "name": "Minimum",
+          "type": "number",
+          "suffix": "reps"
+        },
+        {
+          "name": "Maximum",
+          "type": "number",
+          "suffix": "reps"
+        },
+        {
+          "name": "Pause",
+          "type": "number",
+          "suffix": "s"
+        }
+      ]
+    },
+    {
+      "id": "19",
+      "name": "Butterfly reverse",
+      "configurations": [
+        {
+          "name": "Sätze",
+          "type": "number",
+          "suffix": ""
+        },
+        {
+          "name": "Gewicht",
+          "type": "number",
+          "suffix": "kg"
+        },
+        {
+          "name": "Minimum",
+          "type": "number",
+          "suffix": "reps"
+        },
+        {
+          "name": "Maximum",
+          "type": "number",
+          "suffix": "reps"
+        },
+        {
+          "name": "Pause",
+          "type": "number",
+          "suffix": "s"
+        },
+        {
+          "name": "Sitz",
+          "type": "number",
+          "suffix": ""
+        },
+        {
+          "name": "Griffe",
+          "type": "text",
+          "suffix": ""
+        }
+      ]
+    },
+    {
+      "id": "20",
+      "name": "Dips",
+      "configurations": [
+        {
+          "name": "Sätze",
+          "type": "number",
+          "suffix": ""
+        },
+        {
+          "name": "Gewicht",
+          "type": "number",
+          "suffix": "kg"
+        },
+        {
+          "name": "Minimum",
+          "type": "number",
+          "suffix": "reps"
+        },
+        {
+          "name": "Maximum",
+          "type": "number",
+          "suffix": "reps"
+        },
+        {
+          "name": "Pause",
+          "type": "number",
+          "suffix": "s"
+        }
+      ]
+    },
+    {
+      "id": "21",
+      "name": "Frenchpresse SZ Stange",
+      "configurations": [
+        {
+          "name": "Sätze",
+          "type": "number",
+          "suffix": ""
+        },
+        {
+          "name": "Gewicht",
+          "type": "number",
+          "suffix": "kg"
+        },
+        {
+          "name": "Minimum",
+          "type": "number",
+          "suffix": "reps"
+        },
+        {
+          "name": "Maximum",
+          "type": "number",
+          "suffix": "reps"
+        },
+        {
+          "name": "Pause",
+          "type": "number",
+          "suffix": "s"
+        }
+      ]
+    },
+    {
+      "id": "22",
+      "name": "Trizeps Seil",
+      "configurations": [
+        {
+          "name": "Sätze",
+          "type": "number",
+          "suffix": ""
+        },
+        {
+          "name": "Gewicht",
+          "type": "number",
+          "suffix": "kg"
+        },
+        {
+          "name": "Minimum",
+          "type": "number",
+          "suffix": "reps"
+        },
+        {
+          "name": "Maximum",
+          "type": "number",
+          "suffix": "reps"
+        },
+        {
+          "name": "Pause",
+          "type": "number",
+          "suffix": "s"
+        },
+        {
+          "name": "Höhe",
+          "type": "number",
+          "suffix": ""
+        },
+        {
+          "name": "Griff",
+          "type": "text",
+          "suffix": ""
+        }
+      ]
+    },
+    {
+      "id": "23",
+      "name": "Kreuzheben mit Absetzen",
+      "configurations": [
+        {
+          "name": "Sätze",
+          "type": "number",
+          "suffix": ""
+        },
+        {
+          "name": "Gewicht",
+          "type": "number",
+          "suffix": "kg"
+        },
+        {
+          "name": "Minimum",
+          "type": "number",
+          "suffix": "reps"
+        },
+        {
+          "name": "Maximum",
+          "type": "number",
+          "suffix": "reps"
+        },
+        {
+          "name": "Pause",
+          "type": "number",
+          "suffix": "s"
+        }
+      ]
+    },
+    {
+      "id": "24",
+      "name": "Klimmzüge breit",
+      "configurations": [
+        {
+          "name": "Sätze",
+          "type": "number",
+          "suffix": ""
+        },
+        {
+          "name": "Minimum",
+          "type": "number",
+          "suffix": "reps"
+        },
+        {
+          "name": "Maximum",
+          "type": "number",
+          "suffix": "reps"
+        },
+        {
+          "name": "Pause",
+          "type": "number",
+          "suffix": "s"
+        }
+      ]
+    },
+    {
+      "id": "25",
+      "name": "Latziehen zur Brust breit",
+      "configurations": [
+        {
+          "name": "Sätze",
+          "type": "number",
+          "suffix": ""
+        },
+        {
+          "name": "Gewicht",
+          "type": "number",
+          "suffix": "kg"
+        },
+        {
+          "name": "Minimum",
+          "type": "number",
+          "suffix": "reps"
+        },
+        {
+          "name": "Maximum",
+          "type": "number",
+          "suffix": "reps"
+        },
+        {
+          "name": "Pause",
+          "type": "number",
+          "suffix": "s"
+        },
+        {
+          "name": "Griff",
+          "type": "text",
+          "suffix": ""
+        }
+      ]
+    },
+    {
+      "id": "26",
+      "name": "T-Bar abgestützt",
+      "configurations": [
+        {
+          "name": "Sätze",
+          "type": "number",
+          "suffix": ""
+        },
+        {
+          "name": "Gewicht",
+          "type": "number",
+          "suffix": "kg"
+        },
+        {
+          "name": "Minimum",
+          "type": "number",
+          "suffix": "reps"
+        },
+        {
+          "name": "Maximum",
+          "type": "number",
+          "suffix": "reps"
+        },
+        {
+          "name": "Pause",
+          "type": "number",
+          "suffix": "s"
+        },
+        {
+          "name": "Griff",
+          "type": "text",
+          "suffix": ""
+        }
+      ]
+    },
+    {
+      "id": "27",
+      "name": "Low Row",
+      "configurations": [
+        {
+          "name": "Sätze",
+          "type": "number",
+          "suffix": ""
+        },
+        {
+          "name": "Gewicht",
+          "type": "number",
+          "suffix": "kg"
+        },
+        {
+          "name": "Minimum",
+          "type": "number",
+          "suffix": "reps"
+        },
+        {
+          "name": "Maximum",
+          "type": "number",
+          "suffix": "reps"
+        },
+        {
+          "name": "Pause",
+          "type": "number",
+          "suffix": "s"
+        },
+        {
+          "name": "Sitz",
+          "type": "number",
+          "suffix": ""
+        }
+      ]
+    },
+    {
+      "id": "28",
+      "name": "Crunch mit BOSU",
+      "configurations": [
+        {
+          "name": "Sätze",
+          "type": "number",
+          "suffix": ""
+        },
+        {
+          "name": "Minimum",
+          "type": "number",
+          "suffix": "reps"
+        },
+        {
+          "name": "Maximum",
+          "type": "number",
+          "suffix": "reps"
+        },
+        {
+          "name": "Pause",
+          "type": "number",
+          "suffix": "s"
+        }
+      ]
+    },
+    {
+      "id": "29",
+      "name": "Hyperextension seitlich",
+      "configurations": [
+        {
+          "name": "Sätze",
+          "type": "number",
+          "suffix": ""
+        },
+        {
+          "name": "Gewicht",
+          "type": "number",
+          "suffix": "kg"
+        },
+        {
+          "name": "Minimum",
+          "type": "number",
+          "suffix": "reps"
+        },
+        {
+          "name": "Maximum",
+          "type": "number",
+          "suffix": "reps"
+        },
+        {
+          "name": "Pause",
+          "type": "number",
+          "suffix": "s"
+        },
+        {
+          "name": "Position",
+          "type": "number",
+          "suffix": ""
+        }
+      ]
+    },
+    {
+      "id": "30",
+      "name": "Bauchroller",
+      "configurations": [
+        {
+          "name": "Sätze",
+          "type": "number",
+          "suffix": ""
+        },
+        {
+          "name": "Minimum",
+          "type": "number",
+          "suffix": "reps"
+        },
+        {
+          "name": "Maximum",
+          "type": "number",
+          "suffix": "reps"
+        },
+        {
+          "name": "Pause",
+          "type": "number",
+          "suffix": "s"
+        }
+      ]
     }
   ]
 }

@@ -1,16 +1,16 @@
 import {inject, Injectable, Signal} from '@angular/core';
-import {Plan} from '../data/plan'
-import {toSignal} from '@angular/core/rxjs-interop'
 import {AngularFireDatabase} from '@angular/fire/compat/database'
+import {toSignal} from '@angular/core/rxjs-interop'
+import {Machine} from '../data/machine'
 
 @Injectable({
   providedIn: 'root'
 })
-export class PlanService {
+export class MachineService {
   private database = inject(AngularFireDatabase)
 
-  getPlans(): Signal<Plan[]> {
-    return toSignal(this.database.list<Plan>('plans').valueChanges(), {
+  getMachines(): Signal<Machine[]> {
+    return toSignal(this.database.list<Machine>('machines').valueChanges(), {
       initialValue: []
     })
   }

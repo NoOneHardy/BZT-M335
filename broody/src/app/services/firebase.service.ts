@@ -1,7 +1,4 @@
-import {inject, Injectable, Signal} from '@angular/core'
-import {toSignal} from '@angular/core/rxjs-interop'
-import {AngularFireDatabase} from '@angular/fire/compat/database'
-import {Plan} from '../data/plan'
+import {inject, Injectable} from '@angular/core'
 import {AngularFireAuth} from '@angular/fire/compat/auth'
 
 @Injectable({
@@ -9,7 +6,6 @@ import {AngularFireAuth} from '@angular/fire/compat/auth'
 })
 export class FirebaseService {
   private auth = inject(AngularFireAuth)
-  private database = inject(AngularFireDatabase)
 
   login() {
     this.auth.signInAnonymously().then(() => {
@@ -20,12 +16,6 @@ export class FirebaseService {
   logout() {
     this.auth.signOut().then(() => {
       localStorage.removeItem('token')
-    })
-  }
-
-  getPlans(): Signal<Plan[]> {
-    return toSignal(this.database.list<Plan>('plans').valueChanges(), {
-      initialValue: []
     })
   }
 }

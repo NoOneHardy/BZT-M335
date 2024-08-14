@@ -1,3 +1,22 @@
-<app-content name="Traningsplan erstellen" route="/">
+<app-content name="Trainingsplan erstellen" route="/">
+  <form [formGroup]="form">
+    <div class="form-field">
+      <label for="name">Name</label>
+      <input id="name" formControlName="name" type="text" placeholder="" autocomplete="off">
+    </div>
 
+    <div class="search form-field">
+      <label for="search">Übung suchen</label>
+      <input id="search" formControlName="name" type="text" placeholder="">
+      <div class="icon">
+        <img ngSrc="assets/icon/search.svg" fill alt="Suchen">
+      </div>
+    </div>
+
+    <div class="machines">
+      <div class="machine" *ngFor="let machine of machines()">
+        {{machine.name}}
+      </div>
+    </div>
+  </form>
 </app-content>

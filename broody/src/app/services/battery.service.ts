@@ -14,12 +14,7 @@ export class BatteryService implements OnDestroy {
     root.style.setProperty('--bro-color-primary', `#${color}`)
   }
 
-  get primaryColor() {
-    const primaryColor = this.getCssVariable('--bro-color-primary')
-    return primaryColor ? primaryColor : 'ffffff'
-  }
-
-  constructor() {
+  init() {
     timer(0, 30000).pipe(
       takeUntil(this.unsubscribe$)
     ).subscribe(async () => {

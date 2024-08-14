@@ -5,6 +5,7 @@ import {Plan} from '../data/plan'
 import {ContentComponent} from '../content/content.component'
 import {RouterLink} from '@angular/router'
 import {NavigationItemComponent} from '../navigation-item/navigation-item.component'
+import {PlanService} from '../services/plan.service'
 
 @Component({
   standalone: true,
@@ -19,9 +20,9 @@ import {NavigationItemComponent} from '../navigation-item/navigation-item.compon
   styleUrls: ['home.component.scss']
 })
 export class HomeComponent {
-  private firebase = inject(FirebaseService)
+  private planService = inject(PlanService)
 
-  plans: Signal<Plan[]> = this.firebase.getPlans()
+  plans: Signal<Plan[]> = this.planService.getPlans()
 
   getGreeting() {
     const now = new Date()
