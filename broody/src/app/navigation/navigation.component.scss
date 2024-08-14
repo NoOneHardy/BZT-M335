@@ -1,13 +1,13 @@
 :host nav {
   display: grid;
   place-items: center;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: repeat(3, calc(100% / 3));
   position: fixed;
   left: 0;
-  bottom: -1px;
-  height: 4.6em;
+  bottom: 0;
+  height: 3em;
   width: 100%;
-  background-color: #000000;
+  background-image: var(--bro-gradient-secondary);
   box-shadow: 0 0 .625em #000;
   z-index: 1;
 }

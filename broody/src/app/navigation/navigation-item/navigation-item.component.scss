@@ -9,26 +9,24 @@
     flex-direction: column;
     justify-content: center;
     height: 100%;
-    padding: .625em;
     background-color: transparent;
     color: #FFFFFFFF;
-    font-size: .85em;
-    font-weight: bold;
     text-align: center;
     text-decoration: none;
     -webkit-tap-highlight-color: transparent;
 
     .icon {
       position: relative;
-      height: 1.85em;
-      width: 1.85em;
+      height: 1.6em;
+      width: 1.6em;
     }
 
-    &.mobile {
-      .icon {
-        height: 2.5em;
-        width: 2.5em;
-      }
+    .name {
+      font-size: .6875em;
+    }
+
+    &.active {
+      color: var(--bro-color-primary);
     }
   }
 }

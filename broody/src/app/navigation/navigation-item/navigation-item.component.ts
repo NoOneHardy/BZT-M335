@@ -1,8 +1,7 @@
-import {Component, inject, Input, OnInit} from '@angular/core';
+import {Component, inject, Input} from '@angular/core';
 import {RouterLink, RouterLinkActive} from '@angular/router'
 import {NgIf, NgOptimizedImage} from '@angular/common'
 import {IonicModule} from '@ionic/angular'
-import {ViewportService} from '../../services/viewport.service'
 import {BatteryService} from '../../services/battery.service'
 
 @Component({
@@ -23,11 +22,9 @@ export class NavigationItemComponent {
   @Input() route?: string
   @Input() displayName?: string
 
-  private viewportService = inject(ViewportService)
   private batteryService = inject(BatteryService)
-  protected mobile = this.viewportService.isMobile
 
   getIcon(active: boolean) {
-    return `assets/icon/${this.icon}-${active ? this.batteryService.systemColor : 'ffffff'}.svg`
+    return `assets/icon/${this.icon}-${active ? this.batteryService.primaryColor : 'ffffff'}.svg`
   }
 }

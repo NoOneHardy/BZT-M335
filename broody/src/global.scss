@@ -8,3 +8,15 @@
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
 }
+
+:root {
+  --bro-color-full: #01cd23;
+  --bro-color-medium: #cd9d01;
+  --bro-color-low: #cd3101;
+  --bro-color-charging: #01b5cd;
+
+  --bro-color-primary: var(--bro-color-full);
+  --bro-color-secondary: #222222;
+
+  --bro-gradient-secondary: linear-gradient(to bottom, #222222, #151515);
+}

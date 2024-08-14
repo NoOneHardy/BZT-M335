@@ -2,12 +2,14 @@ import {Component, inject, OnInit} from '@angular/core';
 import {PhotoService, UserPhoto} from '../services/photo.service'
 import {ActionSheetController, IonicModule} from '@ionic/angular'
 import {CommonModule} from '@angular/common'
+import {NavigationComponent} from '../navigation/navigation.component'
 
 @Component({
   standalone: true,
   imports: [
     IonicModule,
-    CommonModule
+    CommonModule,
+    NavigationComponent
   ],
   selector: 'app-new-plan',
   templateUrl: 'new-plan.component.html',
