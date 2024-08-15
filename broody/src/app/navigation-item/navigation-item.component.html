@@ -1,8 +1,14 @@
-<ng-container *ngIf="icon && route">
-  <a [routerLink]="route" class="nav-point">
-    <div class="icon">
+<ng-container *ngIf="(displayName || icon)">
+  <a *ngIf="route" [routerLink]="route" class="nav-point">
+    <div class="icon" *ngIf="icon">
       <img [ngSrc]="getIcon()" [alt]="icon" fill>
     </div>
     <span class="name">{{ displayName }}</span>
   </a>
+  <div *ngIf="!route" class="nav-point">
+    <div class="icon" *ngIf="icon">
+      <img [ngSrc]="getIcon()" [alt]="icon" fill>
+    </div>
+    <span class="name">{{ displayName }}</span>
+  </div>
 </ng-container>

@@ -1,0 +1,14 @@
+<div class="machine" *ngFor="let machine of filteredMachines">
+  <span class="name">{{ machine.name }}</span>
+  <button type="button" (click)="addMachine.emit(machine)" *ngIf="!selectedMachines.includes(machine)">
+    <span class="icon">
+      <img ngSrc="assets/icon/add.svg" alt="Hinzufügen" fill>
+    </span>
+  </button>
+
+  <button type="button" (click)="removeMachine.emit(machine)" *ngIf="selectedMachines.includes(machine)">
+    <span class="icon">
+      <img ngSrc="assets/icon/check.svg" alt="Hinzufügen" fill>
+    </span>
+  </button>
+</div>
