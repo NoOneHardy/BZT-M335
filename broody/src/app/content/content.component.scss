@@ -1,18 +1,22 @@
 :host {
-  display: block;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
   height: 100%;
 
-  header {
+  header, footer {
     display: flex;
     align-items: center;
-    justify-content: center;
-    position: relative;
+    justify-content: space-around;
     height: 4.5em;
     width: 100%;
     padding: 0 1.5em;
     background-color: var(--bro-color-primary);
-    box-shadow: 0 .125em .625em #000;
+    box-shadow: 0 0 .625em #000;
     transition: background-color .2s ease-in-out;
+  }
+
+  header {
+    position: relative;
 
     a {
       display: block;
@@ -34,8 +38,38 @@
 
   .content {
     display: block;
-    height: calc(100% - 4.5em);
     padding: 2em 1.5em;
     overflow: scroll;
+  }
+
+  footer {
+    .item {
+      display: block;
+      height: 3em;
+      width: 3em;
+
+      button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        padding: .25em;
+        border-radius: 50%;
+        background-color: transparent;
+        transition: background-color .2s ease-in-out;
+
+        &:hover {
+          background-color: #0003;
+        }
+
+        .icon {
+          display: block;
+          height: 100%;
+          width: 100%;
+          position: relative;
+        }
+      }
+    }
   }
 }

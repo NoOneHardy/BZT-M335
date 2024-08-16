@@ -17,6 +17,11 @@
     padding: .5em .75em;
     background-color: #222;
     font-weight: 500;
+    transition: color .2s ease-in-out;
+
+    &.selected {
+      color: var(--bro-color-primary);
+    }
 
     button {
       background-color: transparent;

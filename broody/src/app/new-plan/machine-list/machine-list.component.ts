@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, Output, SimpleChanges} from '@angular/core';
 import {NgForOf, NgIf, NgOptimizedImage} from "@angular/common";
 import {Machine} from '../../data/machine'
 
@@ -55,5 +55,17 @@ export class MachineListComponent implements OnChanges {
       }
       return match
     })
+  }
+
+  isSelected(machine: Machine) {
+    return this.selectedMachines.includes(machine)
+  }
+
+  handleClick(machine: Machine) {
+    if (this.isSelected(machine)) {
+      this.removeMachine.emit(machine)
+    } else {
+      this.addMachine.emit(machine)
+    }
   }
 }

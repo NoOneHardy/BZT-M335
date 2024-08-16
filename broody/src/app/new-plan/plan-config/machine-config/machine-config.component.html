@@ -1,0 +1,18 @@
+<ng-container *ngIf="machine">
+  <form [formGroup]="form" class="sets">
+    <div *ngFor="let _ of form.controls.sets.controls; index as iSets" formArrayName="sets">
+      <div class="set">
+        <h3 class="header">Satz {{ iSets + 1 }}</h3>
+        <ng-container *ngFor="let config of machine.configurations; index as iConfig" [formArrayName]="iSets">
+          <div class="config">
+            <label [for]="config.name">{{ config.name }}</label>
+            <div class="input-wrapper" [class.has-suffix]="config.suffix">
+              <input [id]="config.name" [type]="config.type" (blur)="blur$.next()" [formControlName]="iConfig">
+              <span class="suffix" *ngIf="config.suffix">{{ config.suffix }}</span>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </form>
+</ng-container>

@@ -1,0 +1,12 @@
+<div class="wrapper" (touchstart)="swipe($event, 'start')" (touchend)="swipe($event, 'end')">
+  <app-content *ngFor="let machine of machines; index as i" route="/new" [name]="machine.name" [class.next]="isNext(machine)"
+               [button1]="!isFirst() ? 'arrow-back' : undefined"
+               button2="add"
+               [button3]="!isLast() ? 'arrow-forward' : 'save'"
+               (button1Click)="previous()"
+               (button2Click)="newSets$[i].next()"
+               (button3Click)="!isLast() ? next() : save()"
+               [class.previous]="isPrev(machine)">
+    <app-machine-config class="configuration" [machine]="machine" [newSet$]="newSets$[i]"/>
+  </app-content>
+</div>

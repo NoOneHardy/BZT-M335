@@ -20,7 +20,7 @@
       (removeMachine)="removeMachine($event)"
       (addMachine)="addMachine($event)"/>
 
-    <app-navigation-item *ngIf="selectedMachines.length > 0"
+    <app-navigation-item *ngIf="selectedMachines.length > 0 && form.value.name"
                          (click)="submit()"
                          displayName="Weiter"/>
   </form>

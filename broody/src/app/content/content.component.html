@@ -8,3 +8,27 @@
 <div class="content">
   <ng-content/>
 </div>
+
+<footer *ngIf="button1 || button2 || button3">
+  <div class="item">
+    <button (click)="button1Click.emit()" *ngIf="button1">
+    <span class="icon">
+      <img [ngSrc]="'assets/icon/' + button1 + '.svg'" [alt]="button1" fill>
+    </span>
+    </button>
+  </div>
+  <div class="item">
+    <button (click)="button2Click.emit()" *ngIf="button2">
+    <span class="icon">
+      <img [ngSrc]="'assets/icon/' + button2 + '.svg'" [alt]="button2" fill>
+    </span>
+    </button>
+  </div>
+  <div class="item">
+    <button (click)="button3Click.emit()" *ngIf="button3">
+    <span class="icon">
+      <img [ngSrc]="'assets/icon/' + button3 + '.svg'" [alt]="button3" fill>
+    </span>
+    </button>
+  </div>
+</footer>

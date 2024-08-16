@@ -3,7 +3,6 @@ import {CommonModule, NgOptimizedImage} from '@angular/common'
 import {ContentComponent} from '../content/content.component'
 import {FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms'
 import {MachineService} from '../services/machine.service'
-import {MachineConfigComponent} from './machine-config/machine-config.component'
 import {Machine} from '../data/machine'
 import {debounceTime, distinctUntilChanged, Subject, takeUntil} from 'rxjs'
 import {NavigationItemComponent} from '../navigation-item/navigation-item.component'
@@ -18,7 +17,6 @@ import {Router} from '@angular/router'
     ContentComponent,
     ReactiveFormsModule,
     NgOptimizedImage,
-    MachineConfigComponent,
     NavigationItemComponent,
     MachineListComponent
   ],
@@ -86,6 +84,6 @@ export class NewPlanComponent implements OnInit, OnDestroy {
     this.planDataService.setName(this.form.controls.name.value)
     this.planDataService.setMachines(this.selectedMachines)
 
-    this.router.navigateByUrl('/plan/config/machine/' + this.selectedMachines[0].id).then()
+    this.router.navigateByUrl('/plan/config/machines').then()
   }
 }

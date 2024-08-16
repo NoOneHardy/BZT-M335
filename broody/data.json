@@ -5,11 +5,6 @@
       "name": "Brustpresse positiv",
       "configurations": [
         {
-          "name": "Sätze",
-          "type": "number",
-          "suffix": ""
-        },
-        {
           "name": "Gewicht",
           "type": "number",
           "suffix": "kg"
@@ -41,11 +36,6 @@
       "name": "Bankdrücken flach",
       "configurations": [
         {
-          "name": "Sätze",
-          "type": "number",
-          "suffix": ""
-        },
-        {
           "name": "Gewicht",
           "type": "number",
           "suffix": "kg"
@@ -71,11 +61,6 @@
       "id": "2",
       "name": "Wide Chest",
       "configurations": [
-        {
-          "name": "Sätze",
-          "type": "number",
-          "suffix": ""
-        },
         {
           "name": "Gewicht",
           "type": "number",
@@ -108,11 +93,6 @@
       "name": "Butterfly Kurzhantel flach",
       "configurations": [
         {
-          "name": "Sätze",
-          "type": "number",
-          "suffix": ""
-        },
-        {
           "name": "Gewicht",
           "type": "number",
           "suffix": "kg"
@@ -138,11 +118,6 @@
       "id": "4",
       "name": "Bizepscurls SZ Stange",
       "configurations": [
-        {
-          "name": "Sätze",
-          "type": "number",
-          "suffix": ""
-        },
         {
           "name": "Gewicht",
           "type": "number",
@@ -170,11 +145,6 @@
       "name": "Hammercurls Kurzhantel stehend",
       "configurations": [
         {
-          "name": "Sätze",
-          "type": "number",
-          "suffix": ""
-        },
-        {
           "name": "Gewicht",
           "type": "number",
           "suffix": "kg"
@@ -200,11 +170,6 @@
       "id": "6",
       "name": "Scottcurls SZ Stange",
       "configurations": [
-        {
-          "name": "Sätze",
-          "type": "number",
-          "suffix": ""
-        },
         {
           "name": "Gewicht",
           "type": "number",
@@ -232,11 +197,6 @@
       "name": "Beinheben Barren gesteckt",
       "configurations": [
         {
-          "name": "Sätze",
-          "type": "number",
-          "suffix": ""
-        },
-        {
           "name": "Minimum",
           "type": "number",
           "suffix": "reps"
@@ -257,11 +217,6 @@
       "id": "8",
       "name": "Bauchbeuger Tau",
       "configurations": [
-        {
-          "name": "Sätze",
-          "type": "number",
-          "suffix": ""
-        },
         {
           "name": "Gewicht",
           "type": "number",
@@ -294,11 +249,6 @@
       "name": "Rotation Medizin Ball",
       "configurations": [
         {
-          "name": "Sätze",
-          "type": "number",
-          "suffix": ""
-        },
-        {
           "name": "Gewicht",
           "type": "number",
           "suffix": "kg"
@@ -324,11 +274,6 @@
       "id": "10",
       "name": "Bulgarian Split Squat",
       "configurations": [
-        {
-          "name": "Sätze",
-          "type": "number",
-          "suffix": ""
-        },
         {
           "name": "Gewicht",
           "type": "number",
@@ -356,11 +301,6 @@
       "name": "V-Squat",
       "configurations": [
         {
-          "name": "Sätze",
-          "type": "number",
-          "suffix": ""
-        },
-        {
           "name": "Gewicht",
           "type": "number",
           "suffix": "kg"
@@ -387,11 +327,6 @@
       "name": "Linear Leg Press",
       "configurations": [
         {
-          "name": "Sätze",
-          "type": "number",
-          "suffix": ""
-        },
-        {
           "name": "Gewicht",
           "type": "number",
           "suffix": "kg"
@@ -417,11 +352,6 @@
       "id": "13",
       "name": "Beinbeuger stehend",
       "configurations": [
-        {
-          "name": "Sätze",
-          "type": "number",
-          "suffix": ""
-        },
         {
           "name": "Gewicht",
           "type": "number",
@@ -464,11 +394,6 @@
       "name": "Beinstrecker",
       "configurations": [
         {
-          "name": "Sätze",
-          "type": "number",
-          "suffix": ""
-        },
-        {
           "name": "Gewicht",
           "type": "number",
           "suffix": "kg"
@@ -510,11 +435,6 @@
       "name": "Wadenpresse stehend",
       "configurations": [
         {
-          "name": "Sätze",
-          "type": "number",
-          "suffix": ""
-        },
-        {
           "name": "Gewicht",
           "type": "number",
           "suffix": "kg"
@@ -546,11 +466,6 @@
       "name": "Shoulder press",
       "configurations": [
         {
-          "name": "Sätze",
-          "type": "number",
-          "suffix": ""
-        },
-        {
           "name": "Gewicht",
           "type": "number",
           "suffix": "kg"
@@ -581,11 +496,6 @@
       "id": "17",
       "name": "Schulterdrücken vorne",
       "configurations": [
-        {
-          "name": "Sätze",
-          "type": "number",
-          "suffix": ""
-        },
         {
           "name": "Gewicht",
           "type": "number",
@@ -623,11 +533,6 @@
       "name": "Seitheben",
       "configurations": [
         {
-          "name": "Sätze",
-          "type": "number",
-          "suffix": ""
-        },
-        {
           "name": "Gewicht",
           "type": "number",
           "suffix": "kg"
@@ -653,11 +558,6 @@
       "id": "19",
       "name": "Butterfly reverse",
       "configurations": [
-        {
-          "name": "Sätze",
-          "type": "number",
-          "suffix": ""
-        },
         {
           "name": "Gewicht",
           "type": "number",
@@ -695,11 +595,6 @@
       "name": "Dips",
       "configurations": [
         {
-          "name": "Sätze",
-          "type": "number",
-          "suffix": ""
-        },
-        {
           "name": "Gewicht",
           "type": "number",
           "suffix": "kg"
@@ -726,11 +621,6 @@
       "name": "Frenchpresse SZ Stange",
       "configurations": [
         {
-          "name": "Sätze",
-          "type": "number",
-          "suffix": ""
-        },
-        {
           "name": "Gewicht",
           "type": "number",
           "suffix": "kg"
@@ -756,11 +646,6 @@
       "id": "22",
       "name": "Trizeps Seil",
       "configurations": [
-        {
-          "name": "Sätze",
-          "type": "number",
-          "suffix": ""
-        },
         {
           "name": "Gewicht",
           "type": "number",
@@ -798,11 +683,6 @@
       "name": "Kreuzheben mit Absetzen",
       "configurations": [
         {
-          "name": "Sätze",
-          "type": "number",
-          "suffix": ""
-        },
-        {
           "name": "Gewicht",
           "type": "number",
           "suffix": "kg"
@@ -829,11 +709,6 @@
       "name": "Klimmzüge breit",
       "configurations": [
         {
-          "name": "Sätze",
-          "type": "number",
-          "suffix": ""
-        },
-        {
           "name": "Minimum",
           "type": "number",
           "suffix": "reps"
@@ -854,11 +729,6 @@
       "id": "25",
       "name": "Latziehen zur Brust breit",
       "configurations": [
-        {
-          "name": "Sätze",
-          "type": "number",
-          "suffix": ""
-        },
         {
           "name": "Gewicht",
           "type": "number",
@@ -891,11 +761,6 @@
       "name": "T-Bar abgestützt",
       "configurations": [
         {
-          "name": "Sätze",
-          "type": "number",
-          "suffix": ""
-        },
-        {
           "name": "Gewicht",
           "type": "number",
           "suffix": "kg"
@@ -926,11 +791,6 @@
       "id": "27",
       "name": "Low Row",
       "configurations": [
-        {
-          "name": "Sätze",
-          "type": "number",
-          "suffix": ""
-        },
         {
           "name": "Gewicht",
           "type": "number",
@@ -963,11 +823,6 @@
       "name": "Crunch mit BOSU",
       "configurations": [
         {
-          "name": "Sätze",
-          "type": "number",
-          "suffix": ""
-        },
-        {
           "name": "Minimum",
           "type": "number",
           "suffix": "reps"
@@ -988,11 +843,6 @@
       "id": "29",
       "name": "Hyperextension seitlich",
       "configurations": [
-        {
-          "name": "Sätze",
-          "type": "number",
-          "suffix": ""
-        },
         {
           "name": "Gewicht",
           "type": "number",
@@ -1025,11 +875,6 @@
       "name": "Bauchroller",
       "configurations": [
         {
-          "name": "Sätze",
-          "type": "number",
-          "suffix": ""
-        },
-        {
           "name": "Minimum",
           "type": "number",
           "suffix": "reps"
@@ -1046,5 +891,6 @@
         }
       ]
     }
-  ]
+  ],
+  "plans": []
 }

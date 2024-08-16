@@ -14,4 +14,12 @@ export class PlanService {
       initialValue: []
     })
   }
+
+  addPlan(plan: Plan) {
+    const sub = this.database.list('plans').valueChanges().subscribe(plans => {
+      plans.push(plan)
+      this.database.object('plans').set(plans)
+      sub.unsubscribe()
+    })
+  }
 }
