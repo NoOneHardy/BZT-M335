@@ -1,4 +1,4 @@
-import {Component, inject, OnDestroy, OnInit} from '@angular/core';
+import {Component, inject, OnDestroy, OnInit} from '@angular/core'
 import {RouterModule} from '@angular/router'
 import {FirebaseService} from './services/firebase.service'
 import {BatteryService} from './services/battery.service'

@@ -1,4 +1,4 @@
-import {Component, inject, Input, OnDestroy, OnInit} from '@angular/core';
+import {Component, inject, Input, OnDestroy, OnInit} from '@angular/core'
 import {Machine} from '../../../data/machine'
 import {FormArray, FormControl, FormGroup, ReactiveFormsModule} from '@angular/forms'
 import {NgForOf, NgIf} from '@angular/common'

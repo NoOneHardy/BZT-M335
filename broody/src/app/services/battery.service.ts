@@ -1,4 +1,4 @@
-import {Injectable, OnDestroy} from '@angular/core';
+import {Injectable, OnDestroy} from '@angular/core'
 import {Subject, takeUntil, timer} from 'rxjs'
 import {Device} from '@capacitor/device'
 

@@ -1,4 +1,4 @@
-import {inject, Injectable} from '@angular/core';
+import {inject, Injectable} from '@angular/core'
 import {Machine} from '../data/machine'
 import {Exercise} from '../data/exercise'
 import {PlanService} from './plan.service'

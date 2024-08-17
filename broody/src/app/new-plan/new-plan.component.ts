@@ -1,4 +1,4 @@
-import {Component, inject, OnDestroy, OnInit, Signal} from '@angular/core';
+import {Component, inject, OnDestroy, OnInit, Signal} from '@angular/core'
 import {CommonModule, NgOptimizedImage} from '@angular/common'
 import {ContentComponent} from '../content/content.component'
 import {FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms'

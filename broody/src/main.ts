@@ -6,4 +6,4 @@ import {appConfig} from './app/app.config'
 defineCustomElements(window)
 
 bootstrapApplication(AppComponent, appConfig)
-  .catch(err => console.log(err));
+  .catch(err => console.log(err))

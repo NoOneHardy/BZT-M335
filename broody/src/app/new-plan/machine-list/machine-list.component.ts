@@ -1,5 +1,5 @@
-import {Component, EventEmitter, Input, OnChanges, Output, SimpleChanges} from '@angular/core';
-import {NgForOf, NgIf, NgOptimizedImage} from "@angular/common";
+import {Component, EventEmitter, Input, OnChanges, Output, SimpleChanges} from '@angular/core'
+import {NgForOf, NgIf, NgOptimizedImage} from '@angular/common'
 import {Machine} from '../../data/machine'
 
 @Component({

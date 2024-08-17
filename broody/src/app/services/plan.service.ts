@@ -1,4 +1,4 @@
-import {inject, Injectable, Signal} from '@angular/core';
+import {inject, Injectable, Signal} from '@angular/core'
 import {Plan} from '../data/plan'
 import {toSignal} from '@angular/core/rxjs-interop'
 import {AngularFireDatabase} from '@angular/fire/compat/database'

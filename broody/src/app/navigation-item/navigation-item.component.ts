@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input} from '@angular/core'
 import {RouterLink, RouterLinkActive} from '@angular/router'
 import {NgIf, NgOptimizedImage} from '@angular/common'
 
