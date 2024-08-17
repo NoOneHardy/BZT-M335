@@ -1,10 +1,10 @@
 import {Component, inject, Input, OnDestroy, OnInit} from '@angular/core'
-import {Machine} from '../../../data/machine'
+import {Machine} from '../../../model/machine'
 import {FormArray, FormControl, FormGroup, ReactiveFormsModule} from '@angular/forms'
 import {NgForOf, NgIf} from '@angular/common'
 import {PlanDataService} from '../../../services/plan-data.service'
 import {Subject, takeUntil} from 'rxjs'
-import {Exercise} from '../../../data/exercise'
+import {Exercise} from '../../../model/exercise'
 
 @Component({
   selector: 'app-machine-config',

@@ -1,6 +1,6 @@
-import {Component, inject, Signal} from '@angular/core'
+import {Component, inject, OnInit, Signal} from '@angular/core'
 import {CommonModule} from '@angular/common'
-import {Plan} from '../data/plan'
+import {Plan} from '../model/plan'
 import {ContentComponent} from '../content/content.component'
 import {RouterLink} from '@angular/router'
 import {NavigationItemComponent} from '../navigation-item/navigation-item.component'
@@ -18,10 +18,10 @@ import {PlanService} from '../services/plan.service'
   templateUrl: 'home.component.html',
   styleUrls: ['home.component.scss']
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
   private planService = inject(PlanService)
 
-  plans: Signal<Plan[]> = this.planService.getPlans()
+  plans: Plan[] = []
 
   getGreeting() {
     const now = new Date()
@@ -29,5 +29,11 @@ export class HomeComponent {
     if (now.getHours() < 10) return 'Guten Morgen'
     if (now.getHours() < 18) return 'Hallo'
     else return 'Guten Abend'
+  }
+
+  ngOnInit() {
+    this.planService.getPlans().subscribe(plans => {
+      this.plans = plans
+    })
   }
 }

@@ -1,5 +1,14 @@
 <app-content name="Trainingspläne" route="/">
-  <p>
-    overview works!
-  </p>
+  <div class="search form-field">
+    <label for="search">Trainingsplan suchen</label>
+    <input id="search" type="text" placeholder="" autocomplete="off" (input)="search$.next(input.value)" #input>
+    <div class="icon">
+      <img ngSrc="assets/icon/search.svg" fill alt="Suchen">
+    </div>
+  </div>
+  <div class="plans">
+    <div class="plan" *ngFor="let plan of filteredPlans; index as i" (touchstart)="handleClick(i, true)" (touchend)="handleClick(i)">
+      <span class="name">{{ plan.name }}</span>
+    </div>
+  </div>
 </app-content>

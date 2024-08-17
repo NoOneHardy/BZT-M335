@@ -1,5 +1,5 @@
 import {Component, inject, OnInit} from '@angular/core'
-import {Machine} from '../../data/machine'
+import {Machine} from '../../model/machine'
 import {NgForOf, NgIf} from '@angular/common'
 import {PlanDataService} from '../../services/plan-data.service'
 import {ContentComponent} from '../../content/content.component'

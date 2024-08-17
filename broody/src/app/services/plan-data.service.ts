@@ -1,6 +1,6 @@
 import {inject, Injectable} from '@angular/core'
-import {Machine} from '../data/machine'
-import {Exercise} from '../data/exercise'
+import {Machine} from '../model/machine'
+import {Exercise} from '../model/exercise'
 import {PlanService} from './plan.service'
 
 @Injectable({
@@ -44,7 +44,8 @@ export class PlanDataService {
     if (this.data.name && this.data.exercises.length > 0) {
       this.planService.addPlan({
         name: this.data.name,
-        exercises: this.data.exercises
+        exercises: this.data.exercises,
+        last_training: null
       })
 
       this.data = {

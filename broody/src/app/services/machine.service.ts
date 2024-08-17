@@ -1,6 +1,6 @@
 import {inject, Injectable, Signal} from '@angular/core'
 import {AngularFireDatabase} from '@angular/fire/compat/database'
-import {Machine} from '../data/machine'
+import {Machine} from '../model/machine'
 import {map} from 'rxjs'
 import {toSignal} from '@angular/core/rxjs-interop'
 

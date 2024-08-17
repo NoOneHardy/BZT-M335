@@ -1,5 +1,5 @@
 <div class="wrapper" (touchstart)="swipe($event, 'start')" (touchend)="swipe($event, 'end')">
-  <app-content *ngFor="let machine of machines; index as i" route="/new" [name]="machine.name" [class.next]="isNext(machine)"
+  <app-content *ngFor="let machine of machines; index as i" route="/new" [name]="machine.name + ' ' + (i + 1) + '/' + machines.length" [class.next]="isNext(machine)"
                [button1]="!isFirst() ? 'arrow-back' : undefined"
                button2="add"
                [button3]="!isLast() ? 'arrow-forward' : 'save'"

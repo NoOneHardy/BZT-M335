@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, OnChanges, Output, SimpleChanges} from '@angular/core'
 import {NgForOf, NgIf, NgOptimizedImage} from '@angular/common'
-import {Machine} from '../../data/machine'
+import {Machine} from '../../model/machine'
 
 @Component({
   selector: 'app-machine-list',
@@ -44,16 +44,9 @@ export class MachineListComponent implements OnChanges {
 
   searchMachines(filter: string) {
     this.filteredMachines = this.machines.filter(machine => {
-      let match = false
-
-      for (let filterPart of filter.toLowerCase().split(' ')) {
-        for (let namePart of machine.name.toLowerCase().split(' ')) {
-          match = namePart.includes(filterPart) || filterPart.includes(namePart)
-          if (match) break
-        }
-        if (match) break
-      }
-      return match
+      const name = machine.name.trim().toLowerCase()
+      const prepFilter = filter.trim().toLowerCase()
+      return name.includes(prepFilter) || prepFilter.includes(name)
     })
   }
 
