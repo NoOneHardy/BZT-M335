@@ -38,6 +38,8 @@ export class OverviewComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.trainingService.reset()
+
     this.planService.getPlans().subscribe(plans => {
       this.plans = plans
       this.filteredPlans = this.plans
@@ -73,6 +75,6 @@ export class OverviewComponent implements OnInit {
 
   startPlan(index: number) {
     this.planService.startPlan(index)
-    this.trainingService.start(this.plans[index])
+    this.trainingService.start(this.plans[index], index)
   }
 }

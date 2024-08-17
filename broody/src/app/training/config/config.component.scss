@@ -1,0 +1,44 @@
+:host {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex-basis: calc(100% / 2 - .125em);
+  gap: .5em;
+  justify-content: center;
+  width: 100%;
+  padding: .5em;
+  background-color: var(--bro-color-contrast-3);
+
+  .name {
+    font-size: 1.1em;
+    transition: color .2s ease-in-out;
+  }
+
+  .value-wrapper {
+    display: flex;
+    align-items: center;
+    color: var(--bro-color-primary);
+    transition: color .2s ease-in-out;
+
+    .value {
+      display: block;
+      width: 100%;
+      padding-right: .25em;
+      padding-bottom: .25em;
+      background-color: transparent;
+      font-size: 1.5em;
+      text-align: center;
+    }
+
+    &.has-suffix {
+      .value {
+        flex-basis: 70%;
+        text-align: right;
+      }
+
+      .suffix {
+        flex-basis: 30%;
+      }
+    }
+  }
+}

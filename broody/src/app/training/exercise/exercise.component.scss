@@ -1,0 +1,54 @@
+.configurations {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .25em;
+  padding: .5em;
+
+  .config {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-basis: calc(100% / 2 - .125em);
+    gap: .5em;
+    justify-content: center;
+    width: 100%;
+    padding: .5em;
+    background-color: var(--bro-color-contrast-3);
+
+    &:focus-within label {
+      color: var(--bro-color-primary);
+    }
+
+    label {
+      font-size: 1.1em;
+      transition: color .2s ease-in-out;
+    }
+
+    .input-wrapper {
+      display: flex;
+      align-items: center;
+
+      input {
+        width: 100%;
+        padding-right: .25em;
+        padding-bottom: .25em;
+        border-bottom: solid .0625em var(--bro-color-primary);
+        background-color: transparent;
+        font-size: 1.5em;
+        text-align: center;
+        transition: border-bottom-color .2s ease-in-out;
+      }
+
+      &.has-suffix {
+        input {
+          flex-basis: 70%;
+          text-align: right;
+        }
+
+        .suffix {
+          flex-basis: 30%;
+        }
+      }
+    }
+  }
+}

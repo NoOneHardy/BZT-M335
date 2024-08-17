@@ -70,6 +70,6 @@ export class PlanConfigComponent implements OnInit {
 
   save() {
     this.planDataService.save()
-    this.router.navigateByUrl('/')
+    this.router.navigateByUrl('/').then()
   }
 }

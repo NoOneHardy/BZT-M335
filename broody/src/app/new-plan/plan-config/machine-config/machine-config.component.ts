@@ -65,7 +65,7 @@ export class MachineConfigComponent implements OnInit, OnDestroy {
   addSet() {
     const set: Set = new FormArray<FormControl>([])
     for (let _ of this.machine.configurations) {
-      set.push(new FormControl<string | number>('')
+      set.push(new FormControl<string | number | null>(null)
       )
     }
     this.form.controls.sets.push(set)

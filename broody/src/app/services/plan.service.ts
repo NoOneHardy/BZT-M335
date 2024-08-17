@@ -13,6 +13,12 @@ export class PlanService {
     return this.database.list<Plan>('plans').valueChanges()
   }
 
+  setPlan(plan: Plan, index: number) {
+    console.log(plan)
+    console.log(index)
+    this.database.object(`plans/${index}`).set(plan).then().catch((err) => console.log(err))
+  }
+
   addPlan(plan: Plan) {
     const sub = this.database.list('plans').valueChanges().subscribe(plans => {
       plan.id = this.database.createPushId()

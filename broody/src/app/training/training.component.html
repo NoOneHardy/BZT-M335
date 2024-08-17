@@ -1,6 +1,6 @@
 <ng-container *ngIf="training">
   <div class="wrapper" (touchstart)="swipe($event, 'start')" (touchend)="swipe($event, 'end')">
-    <app-content *ngFor="let exercise of training.plan.exercises"
+    <app-content *ngFor="let exercise of training.plan.exercises; index as eIndex"
                  [button1]="!isFirst() ? 'arrow-back' : undefined"
                  [button3]="!isLast() ? 'arrow-forward' : 'save'"
                  (button1Click)="previous()"
@@ -8,7 +8,18 @@
                  [class.previous]="isPrev(exercise)"
                  [class.next]="isNext(exercise)"
                  [name]="exercise.name">
+      <div class="set" *ngFor="let set of exercise.sets; index as i">
+        <h3 class="header">Satz {{ i + 1 }} / {{ exercise.sets.length }}</h3>
+        <div class="configs">
+          <app-config *ngFor="let config of filterConfigurations(set)" [config]="config"/>
+        </div>
 
+        <div class="separator"></div>
+
+        <app-exercise [set]="set" (valueChanges)="valueChanges($event, eIndex, i)"/>
+      </div>
+      <div class="config">
+      </div>
     </app-content>
   </div>
 </ng-container>

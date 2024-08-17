@@ -4,5 +4,5 @@ export interface Plan {
   id?: string
   name: string
   exercises: Exercise[]
-  last_training: Date | null
+  last_training: string | null
 }

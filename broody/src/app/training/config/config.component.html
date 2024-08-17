@@ -1,0 +1,7 @@
+<ng-container *ngIf="config && config.value">
+  <span class="name">{{ config.name }}</span>
+  <div class="value-wrapper" [class.has-suffix]="config.suffix">
+    <span class="value">{{ config.value }}</span>
+    <span class="suffix" *ngIf="config.suffix">{{ config.suffix }}</span>
+  </div>
+</ng-container>

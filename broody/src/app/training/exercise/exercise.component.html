@@ -1,0 +1,14 @@
+<ng-container *ngIf="set">
+  <form [formGroup]="form" class="configurations">
+    <div class="config" *ngFor="let config of form.controls.configurations.controls; index as i"
+         formArrayName="configurations">
+      <div class="configrations" [formGroupName]="i">
+        <label for="value">{{ config.controls.name.value }}</label>
+        <div class="input-wrapper" [class.has-suffix]="config.controls.suffix.value.length > 0">
+          <input type="number" id="value" formControlName="value" (blur)="blur()">
+          <span>{{ config.controls.suffix.value }}</span>
+        </div>
+      </div>
+    </div>
+  </form>
+</ng-container>

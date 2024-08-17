@@ -1,6 +1,7 @@
 export interface Set {
   configurations: {
-    name: string,
+    name: string
     value: string | number | null
+    suffix?: string
   }[]
 }

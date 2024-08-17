@@ -6,6 +6,21 @@
     width: 100%;
     overflow: hidden;
 
+    h3 {
+      width: 100%;
+      padding: .5em;
+      background-color: var(--bro-color-primary);
+      font-size: 1.5em;
+    }
+
+    .configs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .25em;
+      padding: .5em;
+      background-color: rgba(0, 0, 0, 0.13);
+    }
+
     app-content {
       position: absolute;
       top: 0;
@@ -22,6 +37,20 @@
       &.next {
         left: 100%;
         z-index: -1;
+      }
+
+      .set {
+        margin-bottom: 1em;
+
+        .separator {
+          display: block;
+          width: calc(100% - 1em);
+          height: 0.0625em;
+          margin: 0 .5em;
+          background-color: var(--bro-color-primary);
+          box-shadow: 0 0 .25em var(--bro-color-primary);
+          transition: background-color .2s ease-in-out, box-shadow .2s ease-in-out;
+        }
       }
     }
   }
