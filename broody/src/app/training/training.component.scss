@@ -1,0 +1,28 @@
+:host {
+  .wrapper {
+    display: block;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+
+    app-content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      transition: left .2s ease-in-out;
+      z-index: 1;
+
+      &.previous {
+        left: -100%;
+        z-index: -1;
+      }
+
+      &.next {
+        left: 100%;
+        z-index: -1;
+      }
+    }
+  }
+}

@@ -1,5 +1,6 @@
-import {Configuration} from './configuration'
-
 export interface Set {
-  configurations: Configuration[]
+  configurations: {
+    name: string,
+    value: string | number | null
+  }[]
 }

@@ -1,6 +1,5 @@
-import {inject, Injectable, Signal} from '@angular/core'
+import {inject, Injectable} from '@angular/core'
 import {Plan} from '../model/plan'
-import {toSignal} from '@angular/core/rxjs-interop'
 import {AngularFireDatabase} from '@angular/fire/compat/database'
 import {Observable} from 'rxjs'
 
@@ -18,12 +17,18 @@ export class PlanService {
     const sub = this.database.list('plans').valueChanges().subscribe(plans => {
       plan.id = this.database.createPushId()
       plans.push(plan)
-      this.database.object('plans').set(plans)
+      this.database.object('plans').set(plans).then()
       sub.unsubscribe()
     })
   }
 
   removePlan(index: number) {
-    this.database.object(`plans/${index}`).remove()
+    this.database.object(`plans/${index}`).remove().then()
+  }
+
+  startPlan(index: number) {
+    this.database.object(`plans/${index}`).update({
+      last_training: new Date()
+    }).then()
   }
 }

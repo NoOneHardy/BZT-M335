@@ -1,4 +1,4 @@
-import {Component, inject, OnInit, Signal} from '@angular/core'
+import {Component, inject, OnInit} from '@angular/core'
 import {CommonModule} from '@angular/common'
 import {Plan} from '../model/plan'
 import {ContentComponent} from '../content/content.component'
@@ -33,7 +33,10 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.planService.getPlans().subscribe(plans => {
-      this.plans = plans
+      this.plans = plans.filter(plan => plan.last_training).sort((a, b) => {
+        if (!a.last_training || !b.last_training) return 0
+        return a.last_training < b.last_training ? -1 : 1
+      }).slice(0, 5)
     })
   }
 }

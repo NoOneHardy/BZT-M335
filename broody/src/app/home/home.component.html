@@ -2,9 +2,11 @@
   <main class="content">
 
     <h2>Deine letzten Trainings</h2>
-    <div *ngFor="let plan of plans">
-      <p>{{ plan.name }}</p>
-    </div>
+    <ng-container *ngIf="plans.length > 0; else noPlans">
+      <div *ngFor="let plan of plans" class="plan">
+        <p>{{ plan.name }}</p>
+      </div>
+    </ng-container>
 
     <nav>
       <app-navigation-item icon="add" route="new" displayName="Erstellen"/>
@@ -12,3 +14,7 @@
     </nav>
   </main>
 </app-content>
+
+<ng-template #noPlans>
+  Du hast noch keine Trainings abgeschlossen.
+</ng-template>

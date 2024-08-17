@@ -1,0 +1,14 @@
+<ng-container *ngIf="training">
+  <div class="wrapper" (touchstart)="swipe($event, 'start')" (touchend)="swipe($event, 'end')">
+    <app-content *ngFor="let exercise of training.plan.exercises"
+                 [button1]="!isFirst() ? 'arrow-back' : undefined"
+                 [button3]="!isLast() ? 'arrow-forward' : 'save'"
+                 (button1Click)="previous()"
+                 (button3Click)="!isLast() ? next() : save()"
+                 [class.previous]="isPrev(exercise)"
+                 [class.next]="isNext(exercise)"
+                 [name]="exercise.name">
+
+    </app-content>
+  </div>
+</ng-container>

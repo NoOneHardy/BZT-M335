@@ -1,10 +1,11 @@
-import {Component, inject, Input, OnInit} from '@angular/core'
+import {Component, inject, OnInit} from '@angular/core'
 import {ContentComponent} from '../content/content.component'
 import {NgForOf, NgOptimizedImage} from '@angular/common'
 import {FormsModule, ReactiveFormsModule} from '@angular/forms'
 import {PlanService} from '../services/plan.service'
 import {Plan} from '../model/plan'
 import {debounceTime, distinctUntilChanged, Subject} from 'rxjs'
+import {TrainingService} from '../services/training.service'
 
 @Component({
   standalone: true,
@@ -21,6 +22,7 @@ import {debounceTime, distinctUntilChanged, Subject} from 'rxjs'
 })
 export class OverviewComponent implements OnInit {
   private planService = inject(PlanService)
+  private trainingService = inject(TrainingService)
   private touchTimeout?: number
 
   plans: Plan[] = []
@@ -61,7 +63,7 @@ export class OverviewComponent implements OnInit {
     if (this.touchTimeout) {
       clearTimeout(this.touchTimeout)
       this.touchTimeout = undefined
-      this.startPlan()
+      this.startPlan(planIndex)
     }
   }
 
@@ -69,7 +71,8 @@ export class OverviewComponent implements OnInit {
     this.planService.removePlan(index)
   }
 
-  startPlan() {
-
+  startPlan(index: number) {
+    this.planService.startPlan(index)
+    this.trainingService.start(this.plans[index])
   }
 }
