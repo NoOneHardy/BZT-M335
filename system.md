@@ -1,0 +1,34 @@
+# Broody
+
+## Content
+
+* Concept
+* Home
+* Overview
+* New Plan
+
+## Concept
+
+In broody the user can save his plans for the gym and start them to look up what configurations they have use or how much weight they used last time.  
+The app design has a theme color which depends on the battery level of the phone.
+
+| Battery status | Theme color |
+|----------------|-------------|
+| <= 25%         | red         |
+| 25% > x < 75%  | orange      |
+| \>= 75%        | green       |
+| charging       | blue        |
+
+## Home
+
+The home view provides a list with the user's last 5 trainings so one can start them right away.  
+With the buttons on the bottom, the user can create a new plan or navigate to the overview component.
+
+## Overview
+
+Here the user can search for a plan and start a training.
+
+## New Plan
+
+Here the user can create a new plan and add machines to it.  
+In the following pages the user can specify configurations for each set and for each machine.
