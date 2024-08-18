@@ -3,8 +3,8 @@
 
     <h2>Deine letzten Trainings</h2>
     <ng-container *ngIf="plans.length > 0; else noPlans">
-      <div *ngFor="let plan of plans" class="plan">
-        <p>{{ plan.name }}</p>
+      <div class="plans">
+        <button (click)="start(plan)" *ngFor="let plan of plans" class="plan">{{ plan.name }}</button>
       </div>
     </ng-container>
 

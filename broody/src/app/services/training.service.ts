@@ -24,7 +24,7 @@ export class TrainingService {
   start(plan: Plan, index: number) {
     this._training = {
       plan: plan,
-      exercises: plan.exercises
+      exercises: [...plan.exercises]
     }
     this._training.plan.last_training = (new Date()).toString()
     this._trainingIndex = index

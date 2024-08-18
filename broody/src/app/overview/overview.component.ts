@@ -75,6 +75,6 @@ export class OverviewComponent implements OnInit {
 
   startPlan(index: number) {
     this.planService.startPlan(index)
-    this.trainingService.start(this.plans[index], index)
+    this.trainingService.start({...this.plans[index]}, index)
   }
 }

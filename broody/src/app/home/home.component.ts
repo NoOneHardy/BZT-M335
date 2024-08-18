@@ -5,6 +5,7 @@ import {ContentComponent} from '../content/content.component'
 import {RouterLink} from '@angular/router'
 import {NavigationItemComponent} from '../navigation-item/navigation-item.component'
 import {PlanService} from '../services/plan.service'
+import {TrainingService} from '../services/training.service'
 
 @Component({
   standalone: true,
@@ -20,6 +21,7 @@ import {PlanService} from '../services/plan.service'
 })
 export class HomeComponent implements OnInit {
   private planService = inject(PlanService)
+  private trainingService = inject(TrainingService)
 
   plans: Plan[] = []
 
@@ -38,5 +40,10 @@ export class HomeComponent implements OnInit {
         return a.last_training < b.last_training ? -1 : 1
       }).slice(0, 5)
     })
+  }
+
+  start(plan: Plan) {
+    const index = this.plans.findIndex(p => p === plan)
+    if (index >= 0) this.trainingService.start(plan, index)
   }
 }

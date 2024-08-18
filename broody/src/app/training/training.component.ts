@@ -10,7 +10,6 @@ import {Router} from '@angular/router'
 import {TemplateSet} from '../model/template-set'
 import {Set} from '../model/set'
 import {PlanService} from '../services/plan.service'
-import {Configuration} from '../model/configuration'
 
 @Component({
   selector: 'app-training',
@@ -82,9 +81,7 @@ export class TrainingComponent implements OnInit {
   valueChanges(set: Set, eIndex: number, setIndex: number) {
     if (!this.training) return
 
-    console.log(this.training.exercises)
-
-    const sets = this.training.exercises[eIndex].sets
+    const sets = [...this.training.exercises[eIndex].sets]
     sets[setIndex] = set
 
     this.trainingService.setExercise({
