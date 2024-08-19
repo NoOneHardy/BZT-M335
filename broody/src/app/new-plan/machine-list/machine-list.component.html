@@ -1,8 +1,17 @@
-<div class="machine" *ngFor="let machine of filteredMachines" (click)="handleClick(machine)" [class.selected]="isSelected(machine)">
-  <span class="name">{{ machine.name }}</span>
-  <button type="button">
-    <span class="icon">
-      <img [ngSrc]="'assets/icon/' + (this.isSelected(machine) ? 'check' : 'add') + '.svg'" alt="Hinzufügen" fill>
-    </span>
-  </button>
-</div>
+<ng-container *ngIf="filteredMachines.length > 0; else noMachines">
+  <div class="machines">
+    <div class="machine" *ngFor="let machine of filteredMachines" (click)="handleClick(machine)"
+         [class.selected]="isSelected(machine)">
+      <span class="name">{{ machine.name }}</span>
+      <button type="button">
+        <span class="icon">
+          <img [ngSrc]="'assets/icon/' + (this.isSelected(machine) ? 'check' : 'add') + '.svg'" alt="Hinzufügen" fill>
+        </span>
+      </button>
+    </div>
+  </div>
+</ng-container>
+
+<ng-template #noMachines>
+  <p>Keine Geräte gefunden.</p>
+</ng-template>

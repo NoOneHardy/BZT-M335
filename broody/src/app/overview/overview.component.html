@@ -6,9 +6,16 @@
       <img ngSrc="assets/icon/search.svg" fill alt="Suchen">
     </div>
   </div>
-  <div class="plans">
-    <div class="plan" *ngFor="let plan of filteredPlans; index as i" (touchstart)="handleClick(i, true)" (touchend)="handleClick(i)">
-      <span class="name">{{ plan.name }}</span>
+  <ng-container *ngIf="filteredPlans.length !== 0; else noPlans">
+    <div class="plans">
+      <div class="plan" *ngFor="let plan of filteredPlans; index as i" (touchstart)="handleClick(i, true)"
+           (touchend)="handleClick(i)">
+        <span class="name">{{ plan.name }}</span>
+      </div>
     </div>
-  </div>
+  </ng-container>
 </app-content>
+
+<ng-template #noPlans>
+  <p>Keine Trainingspläne gefunden.</p>
+</ng-template>

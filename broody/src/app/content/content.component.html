@@ -2,7 +2,7 @@
   <a [routerLink]="route" *ngIf="route">
     <img ngSrc="assets/icon/arrow-back.svg" alt="Back" fill>
   </a>
-  <h1 *ngIf="name">{{ name }}</h1>
+  <h1 *ngIf="name || isOffline">{{ isOffline ? 'Keine Internetverbindung' : name }}</h1>
 </header>
 
 <div class="content">

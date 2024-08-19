@@ -7,9 +7,16 @@ import {AngularFireAuth} from '@angular/fire/compat/auth'
 export class FirebaseService {
   private auth = inject(AngularFireAuth)
 
+  private _isOffline = false
+  public get isOffline() {
+    return this._isOffline
+  }
+
   login() {
     this.auth.signInAnonymously().then(() => {
       localStorage.setItem('token', 'true')
+    }).catch(() => {
+      this._isOffline = true
     })
   }
 

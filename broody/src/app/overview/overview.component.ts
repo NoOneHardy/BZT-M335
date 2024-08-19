@@ -1,6 +1,6 @@
 import {Component, inject, OnInit} from '@angular/core'
 import {ContentComponent} from '../content/content.component'
-import {NgForOf, NgOptimizedImage} from '@angular/common'
+import {NgForOf, NgIf, NgOptimizedImage} from '@angular/common'
 import {FormsModule, ReactiveFormsModule} from '@angular/forms'
 import {PlanService} from '../services/plan.service'
 import {Plan} from '../model/plan'
@@ -14,7 +14,8 @@ import {TrainingService} from '../services/training.service'
     NgForOf,
     NgOptimizedImage,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgIf
   ],
   selector: 'app-overview',
   templateUrl: './overview.component.html',
