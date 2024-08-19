@@ -1,7 +1,9 @@
-import {Configuration} from './configuration'
+import {MuscleGroup} from './muscle-group'
+import {ConfigurationTemplate} from './configuration-template'
 
 export interface Machine {
-  id: string
+  id: string | null
   name: string,
-  configurations: Configuration[]
+  muscleGroup: MuscleGroup
+  configurations: ConfigurationTemplate[]
 }

@@ -2,16 +2,18 @@
 
 ## Interfaces
 
-### Muscle
+### Muscle Group
 
 ```typescript
-export enum Muscle {
+export enum MuscleGroup {
     CHEST = 'Brust',
-    BIZEPS = 'Bizeps',
-    TRIZEPS = 'Trizeps',
+    BICEPS = 'Bizeps',
+    TRICEPS = 'Trizeps',
     CALVES = 'Waden',
     THIGH = 'Oberschenkel',
-    BACK = 'Rücken'
+    BACK = 'Rücken',
+    SHOULDERS = 'Schultern',
+    ABDOMEN = 'Bauch'
 }
 ```
 
@@ -31,7 +33,7 @@ export interface ConfigurationTemplate {
 export interface Machine {
     id: string | null,
     name: string,
-    muscle: Muscle,
+    muscleGroup: MuscleGroup,
     configurations: ConfigurationTemplate[]
 }
 ```
@@ -45,12 +47,20 @@ export interface Configuration {
 }
 ```
 
+### Set Template
+
+```typescript
+export interface SetTemplate {
+    configurations: Configuration[]
+}
+```
+
 ### Exercise Template
 
 ```typescript
 export interface ExerciseTemplate {
     machine: Machine
-    sets: Configuration[]
+    sets: SetTemplate[]
 }
 ```
 
@@ -61,7 +71,7 @@ export interface Plan {
     id: string
     name: string
     exercises: ExerciseTemplate[]
-    last_training: number
+    lastTraining: number | null
 }
 ```
 
@@ -86,7 +96,7 @@ export interface Exercise {
 
 ```typescript
 export interface Training {
-    id: string
+    id: string | null
     plan: Plan
     exercises: Exercise[]
 }

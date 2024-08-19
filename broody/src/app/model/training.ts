@@ -1,10 +1,8 @@
 import {Plan} from './plan'
-import {Set} from './set'
+import {Exercise} from './exercise'
 
 export interface Training {
+  id: string | null
   plan: Plan
-  exercises: {
-    name: string
-    sets: Set[]
-  }[]
+  exercises: Exercise[]
 }

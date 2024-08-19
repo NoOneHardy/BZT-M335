@@ -1,8 +1,9 @@
 {
-  "machines": [
-    {
-      "id": "0",
+  "machines": {
+    "mOMr0fkE4pma": {
+      "id": "mOMr0fkE4pma",
       "name": "Brustpresse positiv",
+      "muscleGroup": "Brust",
       "configurations": [
         {
           "name": "Gewicht",
@@ -31,9 +32,10 @@
         }
       ]
     },
-    {
-      "id": "1",
+    "utNOZ7O6gRZg": {
+      "id": "utNOZ7O6gRZg",
       "name": "Bankdrücken flach",
+      "muscleGroup": "Brust",
       "configurations": [
         {
           "name": "Gewicht",
@@ -57,9 +59,10 @@
         }
       ]
     },
-    {
-      "id": "2",
+    "UCr3DiyXYQes": {
+      "id": "UCr3DiyXYQes",
       "name": "Wide Chest",
+      "muscleGroup": "Brust",
       "configurations": [
         {
           "name": "Gewicht",
@@ -88,9 +91,10 @@
         }
       ]
     },
-    {
-      "id": "3",
+    "U96hT3dr4J1i": {
+      "id": "U96hT3dr4J1i",
       "name": "Butterfly Kurzhantel flach",
+      "muscleGroup": "Brust",
       "configurations": [
         {
           "name": "Gewicht",
@@ -114,9 +118,10 @@
         }
       ]
     },
-    {
-      "id": "4",
+    "NeysFvOpro1M": {
+      "id": "NeysFvOpro1M",
       "name": "Bizepscurls SZ Stange",
+      "muscleGroup": "Bizeps",
       "configurations": [
         {
           "name": "Gewicht",
@@ -140,9 +145,10 @@
         }
       ]
     },
-    {
-      "id": "5",
+    "cWq14jelRkjm": {
+      "id": "cWq14jelRkjm",
       "name": "Hammercurls Kurzhantel stehend",
+      "muscleGroup": "Bizeps",
       "configurations": [
         {
           "name": "Gewicht",
@@ -166,9 +172,10 @@
         }
       ]
     },
-    {
-      "id": "6",
+    "O9ad8euPhH8p": {
+      "id": "O9ad8euPhH8p",
       "name": "Scottcurls SZ Stange",
+      "muscleGroup": "Bizeps",
       "configurations": [
         {
           "name": "Gewicht",
@@ -192,9 +199,10 @@
         }
       ]
     },
-    {
-      "id": "7",
+    "5cIL6GLQXk7F": {
+      "id": "5cIL6GLQXk7F",
       "name": "Beinheben Barren gesteckt",
+      "muscleGroup": "Bauch",
       "configurations": [
         {
           "name": "Minimum",
@@ -213,9 +221,10 @@
         }
       ]
     },
-    {
-      "id": "8",
+    "SPF8D9c3YQBh": {
+      "id": "SPF8D9c3YQBh",
       "name": "Bauchbeuger Tau",
+      "muscleGroup": "Bauch",
       "configurations": [
         {
           "name": "Gewicht",
@@ -244,9 +253,10 @@
         }
       ]
     },
-    {
-      "id": "9",
+    "zbIf9IgHF2YC": {
+      "id": "zbIf9IgHF2YC",
       "name": "Rotation Medizin Ball",
+      "muscleGroup": "Bauch",
       "configurations": [
         {
           "name": "Gewicht",
@@ -270,9 +280,10 @@
         }
       ]
     },
-    {
-      "id": "10",
+    "UiAHKWarEdf1": {
+      "id": "UiAHKWarEdf1",
       "name": "Bulgarian Split Squat",
+      "muscleGroup": "Oberschenkel",
       "configurations": [
         {
           "name": "Gewicht",
@@ -296,9 +307,10 @@
         }
       ]
     },
-    {
-      "id": "11",
+    "4iID0049VWti": {
+      "id": "4iID0049VWti",
       "name": "V-Squat",
+      "muscleGroup": "Oberschenkel",
       "configurations": [
         {
           "name": "Gewicht",
@@ -322,9 +334,10 @@
         }
       ]
     },
-    {
-      "id": "12",
+    "wiB5wWTfj8wQ": {
+      "id": "wiB5wWTfj8wQ",
       "name": "Linear Leg Press",
+      "muscleGroup": "Oberschenkel",
       "configurations": [
         {
           "name": "Gewicht",
@@ -348,9 +361,10 @@
         }
       ]
     },
-    {
-      "id": "13",
+    "0iOn2H7MyA4a": {
+      "id": "0iOn2H7MyA4a",
       "name": "Beinbeuger stehend",
+      "muscleGroup": "Oberschenkel",
       "configurations": [
         {
           "name": "Gewicht",
@@ -389,9 +403,10 @@
         }
       ]
     },
-    {
-      "id": "14",
+    "uOSsXcX6X2OM": {
+      "id": "uOSsXcX6X2OM",
       "name": "Beinstrecker",
+      "muscleGroup": "Oberschenkel",
       "configurations": [
         {
           "name": "Gewicht",
@@ -430,9 +445,10 @@
         }
       ]
     },
-    {
-      "id": "15",
+    "ZzkFFhSMi5je": {
+      "id": "ZzkFFhSMi5je",
       "name": "Wadenpresse stehend",
+      "muscleGroup": "Waden",
       "configurations": [
         {
           "name": "Gewicht",
@@ -461,9 +477,10 @@
         }
       ]
     },
-    {
-      "id": "16",
+    "RpFcQdIPETsS": {
+      "id": "RpFcQdIPETsS",
       "name": "Shoulder press",
+      "muscleGroup": "Schultern",
       "configurations": [
         {
           "name": "Gewicht",
@@ -492,9 +509,10 @@
         }
       ]
     },
-    {
-      "id": "17",
+    "D4L6a4vFaK2C": {
+      "id": "D4L6a4vFaK2C",
       "name": "Schulterdrücken vorne",
+      "muscleGroup": "Schultern",
       "configurations": [
         {
           "name": "Gewicht",
@@ -528,9 +546,10 @@
         }
       ]
     },
-    {
-      "id": "18",
+    "GNb0vKjYgE32": {
+      "id": "GNb0vKjYgE32",
       "name": "Seitheben",
+      "muscleGroup": "Schultern",
       "configurations": [
         {
           "name": "Gewicht",
@@ -554,9 +573,10 @@
         }
       ]
     },
-    {
-      "id": "19",
+    "XwHljajPAyDa": {
+      "id": "XwHljajPAyDa",
       "name": "Butterfly reverse",
+      "muscleGroup": "Schultern",
       "configurations": [
         {
           "name": "Gewicht",
@@ -590,9 +610,10 @@
         }
       ]
     },
-    {
-      "id": "20",
+    "WSUjYYgh9ui6": {
+      "id": "WSUjYYgh9ui6",
       "name": "Dips",
+      "muscleGroup": "Trizeps",
       "configurations": [
         {
           "name": "Gewicht",
@@ -616,9 +637,10 @@
         }
       ]
     },
-    {
-      "id": "21",
+    "cofhvFN2UQn7": {
+      "id": "cofhvFN2UQn7",
       "name": "Frenchpresse SZ Stange",
+      "muscleGroup": "Trizeps",
       "configurations": [
         {
           "name": "Gewicht",
@@ -642,9 +664,10 @@
         }
       ]
     },
-    {
-      "id": "22",
+    "2WucpSIJ5FPR": {
+      "id": "2WucpSIJ5FPR",
       "name": "Trizeps Seil",
+      "muscleGroup": "Trizeps",
       "configurations": [
         {
           "name": "Gewicht",
@@ -678,9 +701,10 @@
         }
       ]
     },
-    {
-      "id": "23",
+    "k1gYiUXdxvbs": {
+      "id": "k1gYiUXdxvbs",
       "name": "Kreuzheben mit Absetzen",
+      "muscleGroup": "Rücken",
       "configurations": [
         {
           "name": "Gewicht",
@@ -704,9 +728,10 @@
         }
       ]
     },
-    {
-      "id": "24",
+    "Mq64Dqvj8jEo": {
+      "id": "Mq64Dqvj8jEo",
       "name": "Klimmzüge breit",
+      "muscleGroup": "Rücken",
       "configurations": [
         {
           "name": "Minimum",
@@ -725,9 +750,10 @@
         }
       ]
     },
-    {
-      "id": "25",
+    "WlGcqcA5yjrO": {
+      "id": "WlGcqcA5yjrO",
       "name": "Latziehen zur Brust breit",
+      "muscleGroup": "Rücken",
       "configurations": [
         {
           "name": "Gewicht",
@@ -756,9 +782,10 @@
         }
       ]
     },
-    {
-      "id": "26",
+    "A987vOKIGHfz": {
+      "id": "A987vOKIGHfz",
       "name": "T-Bar abgestützt",
+      "muscleGroup": "Rücken",
       "configurations": [
         {
           "name": "Gewicht",
@@ -787,9 +814,10 @@
         }
       ]
     },
-    {
-      "id": "27",
+    "3uhUaV8kklQp": {
+      "id": "3uhUaV8kklQp",
       "name": "Low Row",
+      "muscleGroup": "Rücken",
       "configurations": [
         {
           "name": "Gewicht",
@@ -818,9 +846,10 @@
         }
       ]
     },
-    {
-      "id": "28",
+    "i5PFpHXgsJW8": {
+      "id": "i5PFpHXgsJW8",
       "name": "Crunch mit BOSU",
+      "muscleGroup": "Bauch",
       "configurations": [
         {
           "name": "Minimum",
@@ -839,9 +868,10 @@
         }
       ]
     },
-    {
-      "id": "29",
+    "FoHthuDzABkN": {
+      "id": "FoHthuDzABkN",
       "name": "Hyperextension seitlich",
+      "muscleGroup": "Bauch",
       "configurations": [
         {
           "name": "Gewicht",
@@ -870,9 +900,10 @@
         }
       ]
     },
-    {
-      "id": "30",
+    "WTSGAgUlT4EY": {
+      "id": "WTSGAgUlT4EY",
       "name": "Bauchroller",
+      "muscleGroup": "Bauch",
       "configurations": [
         {
           "name": "Minimum",
@@ -891,6 +922,6 @@
         }
       ]
     }
-  ],
-  "plans": []
+  },
+  "plans": {}
 }

@@ -1,8 +1,8 @@
-import {Exercise} from './exercise'
+import {ExerciseTemplate} from './exercise-template'
 
 export interface Plan {
-  id?: string
+  id: string | null
   name: string
-  exercises: Exercise[]
-  last_training: string | null
+  exercises: ExerciseTemplate[]
+  lastTraining: number | null
 }

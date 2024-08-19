@@ -1,5 +1,5 @@
 import {Configuration} from './configuration'
 
-export interface Set {
+export interface SetTemplate {
   configurations: Configuration[]
 }

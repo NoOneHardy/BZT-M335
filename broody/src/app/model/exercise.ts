@@ -1,6 +1,7 @@
-import {TemplateSet} from './template-set'
+import {ExerciseTemplate} from './exercise-template'
+import {Set} from './set'
 
 export interface Exercise {
-  name: string,
-  sets: TemplateSet[]
+  template: ExerciseTemplate
+  sets: Set[]
 }
