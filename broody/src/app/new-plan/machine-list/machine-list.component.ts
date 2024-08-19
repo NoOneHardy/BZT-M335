@@ -1,6 +1,10 @@
-import {Component, EventEmitter, Input, OnChanges, Output, SimpleChanges} from '@angular/core'
+import {Component, EventEmitter, inject, OnDestroy, OnInit, Output} from '@angular/core'
 import {NgForOf, NgIf, NgOptimizedImage} from '@angular/common'
 import {Machine} from '../../model/machine'
+import {MachineService} from '../../services/machine.service'
+import {debounceTime, distinctUntilChanged, Subject, takeUntil} from 'rxjs'
+import {FormFieldComponent} from '../../form-field/form-field.component'
+import {IconComponent} from '../../icon/icon.component'
 
 @Component({
   selector: 'app-machine-list',
@@ -10,39 +14,45 @@ import {Machine} from '../../model/machine'
   imports: [
     NgForOf,
     NgIf,
-    NgOptimizedImage
+    NgOptimizedImage,
+    FormFieldComponent,
+    IconComponent
   ]
 })
-export class MachineListComponent implements OnChanges {
-  @Input() machines: Machine[] = []
-  @Input() selectedMachines: Machine[] = []
-  @Input() filter?: string
+export class MachineListComponent implements OnInit, OnDestroy {
+  @Output() addMachine = new EventEmitter<string>()
+  @Output() removeMachine = new EventEmitter<string>()
 
-  @Output() addMachine = new EventEmitter<Machine>()
-  @Output() removeMachine = new EventEmitter<Machine>()
+  private machineService = inject(MachineService)
+  private unsubscribe$ = new Subject<void>()
+  private machines: Machine[] = []
+  private selectedMachines: Machine[] = []
 
-  filteredMachines: Machine[] = this.machines
+  filteredMachines: Machine[] = []
+  search$ = new Subject<string>()
 
-  ngOnChanges(changes: SimpleChanges) {
-    const filterChanges = changes['filter']
-    const machineChanges = changes['machines']
+  ngOnInit() {
+    this.machineService.getMachines().pipe(
+      takeUntil(this.unsubscribe$)
+    ).subscribe(machines => {
+      this.machines = machines
+      this.resetFilteredMachines()
+    })
 
-    if (machineChanges) {
-      if (machineChanges.currentValue) {
-        this.filteredMachines = this.machines
-      }
-    }
-
-    if (filterChanges) {
-      if (filterChanges.currentValue) {
-        this.searchMachines(filterChanges.currentValue)
-      } else {
-        this.filteredMachines = this.machines
-      }
-    }
+    this.search$.pipe(
+      distinctUntilChanged(),
+      debounceTime(300),
+      takeUntil(this.unsubscribe$)
+    ).subscribe(filter => {
+      this.filterMachines(filter)
+    })
   }
 
-  searchMachines(filter: string) {
+  ngOnDestroy() {
+    this.unsubscribe$.next()
+  }
+
+  filterMachines(filter: string) {
     this.filteredMachines = this.machines.filter(machine => {
       const name = machine.name.trim().toLowerCase()
       const prepFilter = filter.trim().toLowerCase()
@@ -55,10 +65,23 @@ export class MachineListComponent implements OnChanges {
   }
 
   handleClick(machine: Machine) {
-    if (this.isSelected(machine)) {
-      this.removeMachine.emit(machine)
-    } else {
-      this.addMachine.emit(machine)
+    if (!machine.id) {
+      // TODO: Show error message
+      return
     }
+
+    if (this.isSelected(machine)) {
+      this.selectedMachines = this.selectedMachines.filter(m => m.id !== machine.id)
+      this.removeMachine.emit(machine.id)
+    } else {
+      this.selectedMachines.push(machine)
+      this.addMachine.emit(machine.id)
+    }
+  }
+
+  resetFilteredMachines() {
+    this.filteredMachines = [
+      ...this.machines
+    ]
   }
 }

@@ -1,0 +1,58 @@
+:host ::ng-deep {
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: .5em;
+    margin-bottom: .5em;
+
+    &:focus-within, &:has(input:not(:placeholder-shown)) {
+      label {
+        top: 0;
+        font-size: .75em;
+      }
+    }
+
+    &:focus-within {
+      label {
+        color: var(--bro-color-primary);
+      }
+    }
+
+    label {
+      position: absolute;
+      top: 1.25em;
+      left: 1.5em;
+      transition: top .2s ease-in-out, font-size .2s ease-in-out, color .2s ease-in-out;
+    }
+
+    input {
+      width: 100%;
+      padding: .75em 1em;
+      outline: none;
+      background-color: var(--bro-color-contrast-3);
+      font-size: 1em;
+      line-height: 1.25em;
+      font-weight: 600;
+      transition: box-shadow .2s ease-in-out;
+
+      &:focus {
+        box-shadow: 0 0 .25em var(--bro-color-primary);
+      }
+    }
+
+    app-icon {
+      display: none;
+    }
+
+    &:has(input:placeholder-shown) app-icon {
+      display: block;
+      position: absolute;
+      top: 50%;
+      right: 1.5em;
+      height: 1.5em;
+      width: 1.5em;
+      transform: translateY(-50%);
+    }
+  }
+}

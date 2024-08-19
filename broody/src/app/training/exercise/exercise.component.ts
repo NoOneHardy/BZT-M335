@@ -1,7 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core'
 import {FormArray, FormControl, FormGroup, ReactiveFormsModule} from '@angular/forms'
 import {NgForOf, NgIf} from '@angular/common'
-import {TemplateSet} from '../../model/template-set'
+import {SetTemplate} from '../../model/set-template'
 
 @Component({
   selector: 'app-exercise',
@@ -15,7 +15,7 @@ import {TemplateSet} from '../../model/template-set'
   ]
 })
 export class ExerciseComponent implements OnInit {
-  @Input() set?: TemplateSet
+  @Input() set?: SetTemplate
   @Output() valueChanges = new EventEmitter<{ configurations: {value: number | string | null, name: string, suffix?: string }[]}>()
 
   form = new FormGroup({
@@ -43,6 +43,8 @@ export class ExerciseComponent implements OnInit {
   }
 
   prepareForm() {
+    // TODO: Change input to exercise instead of set
+    /*
     if (!this.set) return
 
     const weightConfig = this.set.configurations.find(c => c.name === 'Gewicht')
@@ -74,6 +76,7 @@ export class ExerciseComponent implements OnInit {
         })
       }))
     }
+    */
   }
 }
 

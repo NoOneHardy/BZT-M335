@@ -1,8 +1,7 @@
-import {inject, Injectable, Signal} from '@angular/core'
+import {inject, Injectable} from '@angular/core'
 import {AngularFireDatabase} from '@angular/fire/compat/database'
 import {Machine} from '../model/machine'
-import {map} from 'rxjs'
-import {toSignal} from '@angular/core/rxjs-interop'
+import {map, Observable} from 'rxjs'
 
 @Injectable({
   providedIn: 'root'
@@ -10,15 +9,16 @@ import {toSignal} from '@angular/core/rxjs-interop'
 export class MachineService {
   private database = inject(AngularFireDatabase)
 
-  getMachines(): Signal<Machine[]> {
-    return toSignal(this.database.list<Machine>('machines').valueChanges().pipe(
-        map(machines => machines.sort((a, b) => {
-            return a.name > b.name ? 1 : -1
-          })
-        )
-      ), {
-        initialValue: []
-      }
+  getMachines(): Observable<Machine[]> {
+    return this.database.list<Machine>('machines').valueChanges().pipe(
+      map(machines => machines.sort((a, b) => {
+          return a.name > b.name ? 1 : -1
+        })
+      )
     )
+  }
+
+  getMachine(id: string): Observable<Machine | null> {
+    return this.database.object<Machine>(`machines/${id}`).valueChanges()
   }
 }

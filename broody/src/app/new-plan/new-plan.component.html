@@ -5,18 +5,7 @@
       <input id="name" formControlName="name" type="text" placeholder="" autocomplete="off">
     </div>
 
-    <div class="search form-field">
-      <label for="search">Übung hinzufügen</label>
-      <input id="search" formControlName="search" type="text" placeholder="" autocomplete="off">
-      <div class="icon">
-        <img ngSrc="assets/icon/search.svg" fill alt="Suchen">
-      </div>
-    </div>
-
     <app-machine-list
-      [selectedMachines]="selectedMachines"
-      [machines]="machines()"
-      [filter]="searchValue"
       (removeMachine)="removeMachine($event)"
       (addMachine)="addMachine($event)"/>
 

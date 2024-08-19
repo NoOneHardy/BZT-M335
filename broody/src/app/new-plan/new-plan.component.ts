@@ -1,10 +1,9 @@
-import {Component, inject, OnDestroy, OnInit, Signal} from '@angular/core'
+import {Component, inject} from '@angular/core'
 import {CommonModule, NgOptimizedImage} from '@angular/common'
 import {ContentComponent} from '../content/content.component'
 import {FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms'
 import {MachineService} from '../services/machine.service'
 import {Machine} from '../model/machine'
-import {debounceTime, distinctUntilChanged, Subject, takeUntil} from 'rxjs'
 import {NavigationItemComponent} from '../navigation-item/navigation-item.component'
 import {MachineListComponent} from './machine-list/machine-list.component'
 import {PlanDataService} from '../services/plan-data.service'
@@ -24,22 +23,15 @@ import {Router} from '@angular/router'
   templateUrl: 'new-plan.component.html',
   styleUrls: ['new-plan.component.scss']
 })
-export class NewPlanComponent implements OnInit, OnDestroy {
+export class NewPlanComponent {
   private machineService = inject(MachineService)
   private planDataService = inject(PlanDataService)
   private router = inject(Router)
-  private unsubscribe$ = new Subject<void>()
-
-  machines: Signal<Machine[]> =  this.machineService.getMachines()
-  searchValue?: string
 
   form = new FormGroup({
     name: new FormControl<string>('', {
       nonNullable: true,
       validators: [Validators.required, Validators.minLength(3)]
-    }),
-    search: new FormControl<string>('', {
-      nonNullable: true
     }),
     machines: new FormControl<Machine[]>([], {
       nonNullable: true,
@@ -47,31 +39,24 @@ export class NewPlanComponent implements OnInit, OnDestroy {
     })
   })
 
-  ngOnInit() {
-    this.form.controls.search.valueChanges.pipe(
-      distinctUntilChanged(),
-      debounceTime(250),
-      takeUntil(this.unsubscribe$)
-    ).subscribe(value => {
-      this.searchValue = value
+  addMachine(id: string) {
+    const sub = this.machineService.getMachine(id).subscribe(machine => {
+      if (!machine) {
+        // TODO: Show error message
+        return
+      }
+
+      const selectedMachines = this.form.controls.machines.value
+      selectedMachines.push(machine)
+      this.form.controls.machines.setValue(selectedMachines)
+
+      sub.unsubscribe()
     })
   }
 
-  ngOnDestroy() {
-    this.unsubscribe$.next()
-  }
-
-  addMachine(machine: Machine) {
-    const selectedMachines = this.form.controls.machines.getRawValue()
-    selectedMachines.push(machine)
-    this.form.controls.machines.setValue(selectedMachines)
-  }
-
-  removeMachine(machine: Machine) {
-    const selectedMachines = this.form.controls.machines.getRawValue()
-    const index = selectedMachines.indexOf(machine)
-    selectedMachines.splice(index, 1)
-    this.form.controls.machines.setValue(selectedMachines)
+  removeMachine(id: string) {
+    const selectedMachines = this.selectedMachines
+    this.form.controls.machines.setValue(selectedMachines.filter(machine => machine.id !== id))
   }
 
   get selectedMachines() {
@@ -79,10 +64,15 @@ export class NewPlanComponent implements OnInit, OnDestroy {
   }
 
   submit() {
-    if (this.form.invalid || this.selectedMachines.length < 1) return
+    if (this.form.invalid || this.selectedMachines.length < 1) {
+      // TODO: Show error message
+      return
+    }
 
-    this.planDataService.name = this.form.controls.name.value
-    this.planDataService.machines = this.selectedMachines
+    const data = this.form.getRawValue()
+
+    this.planDataService.name = data.name
+    this.planDataService.machines = data.machines
 
     this.router.navigateByUrl('/plan/config/machines').then()
   }

@@ -1,3 +1,9 @@
+<app-form-field class="search">
+  <label for="search">Übung hinzufügen</label>
+  <input id="search" (input)="search$.next(input.value)" #input placeholder="" autocomplete="off">
+  <app-icon icon="search"/>
+</app-form-field>
+
 <ng-container *ngIf="filteredMachines.length > 0; else noMachines">
   <div class="machines">
     <div class="machine" *ngFor="let machine of filteredMachines" (click)="handleClick(machine)"
