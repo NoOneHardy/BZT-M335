@@ -2,6 +2,10 @@
 
 2024-25 | Modul 335 | Mobile-Applikation realisieren
 
+> **Important**  
+> This app works on android 14.0.  
+> It requires an internet connection to load data.
+
 ## Setup
 
 **Install Ionic CLI globally**
