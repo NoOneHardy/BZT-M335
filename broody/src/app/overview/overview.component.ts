@@ -54,10 +54,10 @@ export class OverviewComponent implements OnInit {
     })
   }
 
-  handleClick(planIndex: number, start: boolean = false) {
+  handleClick(id: string, start: boolean = false) {
     if (start) {
       this.touchTimeout = setTimeout(() => {
-        this.deletePlan(planIndex)
+        this.deletePlan(id)
         clearTimeout(this.touchTimeout)
         this.touchTimeout = undefined
       }, 3000)
@@ -66,16 +66,16 @@ export class OverviewComponent implements OnInit {
     if (this.touchTimeout) {
       clearTimeout(this.touchTimeout)
       this.touchTimeout = undefined
-      this.startPlan(planIndex)
+      this.startPlan(id)
     }
   }
 
-  deletePlan(index: number) {
-    this.planService.removePlan(index)
+  deletePlan(id: string) {
+    this.planService.removePlan(id)
   }
 
-  startPlan(index: number) {
-    this.planService.startPlan(index)
-    this.trainingService.start({...this.plans[index]}, index)
+  startPlan(id: string) {
+    this.planService.startPlan(id)
+    this.trainingService.start(id)
   }
 }

@@ -13,10 +13,8 @@ export class PlanService {
     return this.database.list<Plan>('plans').valueChanges()
   }
 
-  setPlan(plan: Plan, index: number) {
-    console.log(plan)
-    console.log(index)
-    this.database.object(`plans/${index}`).set(plan).then().catch((err) => console.log(err))
+  getPlan(id: string): Observable<Plan | null> {
+    return this.database.object<Plan>(`plans/${id}`).valueChanges()
   }
 
   addPlan(plan: Plan) {
@@ -28,13 +26,13 @@ export class PlanService {
     })
   }
 
-  removePlan(index: number) {
-    this.database.object(`plans/${index}`).remove().then()
+  removePlan(id: string) {
+    this.database.object(`plans/${id}`).remove().then()
   }
 
-  startPlan(index: number) {
-    this.database.object(`plans/${index}`).update({
-      last_training: new Date()
+  startPlan(id: string) {
+    this.database.object(`plans/${id}`).update({
+      last_training: (new Date()).valueOf()
     }).then()
   }
 }

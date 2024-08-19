@@ -1,10 +1,10 @@
-import {Component, inject, Input, OnDestroy, OnInit} from '@angular/core'
+import {Component, Input, OnDestroy, OnInit} from '@angular/core'
 import {Machine} from '../../../model/machine'
 import {FormArray, FormControl, FormGroup, ReactiveFormsModule} from '@angular/forms'
 import {NgForOf, NgIf} from '@angular/common'
-import {PlanDataService} from '../../../services/plan-data.service'
 import {Subject, takeUntil} from 'rxjs'
-import {Exercise} from '../../../model/exercise'
+import {ExerciseTemplate} from '../../../model/exercise-template'
+import {Configuration} from '../../../model/configuration'
 
 @Component({
   selector: 'app-machine-config',
@@ -20,38 +20,36 @@ import {Exercise} from '../../../model/exercise'
 export class MachineConfigComponent implements OnInit, OnDestroy {
   @Input() machine!: Machine
   @Input() newSet$?: Subject<void>
-
-  private planDataService = inject(PlanDataService)
+  
   private unsubscribe$ = new Subject<void>()
 
   blur$ = new Subject<void>()
   form = new FormGroup({
-    sets: new FormArray<Set>([])
+    sets: new FormArray<SetForm>([])
   })
 
   ngOnInit() {
     this.addSet()
     this.blur$.pipe(takeUntil(this.unsubscribe$)).subscribe(() => {
+      // TODO: Save data more efficient
       const data = this.form.value
-      const exercise: Exercise = {
-        name: this.machine.name,
+      const exercise: ExerciseTemplate = {
+        machine: this.machine,
         sets: []
       }
 
       if (!data.sets) return
 
-      exercise.sets = data.sets?.map(set => ({
-        configurations: this.machine.configurations.map((config, index) => ({
-          name: config.name,
-          suffix: config.suffix,
-          value: set[index]
-        }))
-      })) ?? []
-
-      this.planDataService.setExercise(exercise)
+      exercise.sets = data.sets.map(set => {
+        return {
+          configurations: this.machine.configurations.map((config, index): Configuration => ({
+            name: config.name,
+            value: set[index].value ?? null
+          }))
+        }
+      })
     })
     this.newSet$?.pipe(takeUntil(this.unsubscribe$)).subscribe(() => {
-      console.log('Test')
       this.addSet()
     })
 
@@ -63,13 +61,14 @@ export class MachineConfigComponent implements OnInit, OnDestroy {
   }
 
   addSet() {
-    const set: Set = new FormArray<FormControl>([])
+    const set: SetForm = new FormArray<FormGroup>([])
     for (let _ of this.machine.configurations) {
-      set.push(new FormControl<string | number | null>(null)
-      )
+      set.push(new FormGroup({
+        value: new FormControl<string | number | null>(null)
+      }))
     }
     this.form.controls.sets.push(set)
   }
 }
 
-type Set = FormArray<FormControl<string | number | null>>
+type SetForm = FormArray<FormGroup<{value: FormControl<string | number | null>}>>

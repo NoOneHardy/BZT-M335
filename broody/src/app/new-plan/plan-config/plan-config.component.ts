@@ -27,7 +27,7 @@ export class PlanConfigComponent implements OnInit {
 
   private activeMachine = 0
 
-  machines: Machine[] = this.planDataService.getMachines()
+  machines: Machine[] = this.planDataService.machines
   newSets$: Subject<void>[] = []
 
   ngOnInit() {

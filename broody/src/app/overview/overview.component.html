@@ -8,10 +8,12 @@
   </div>
   <ng-container *ngIf="filteredPlans.length !== 0; else noPlans">
     <div class="plans">
-      <div class="plan" *ngFor="let plan of filteredPlans; index as i" (touchstart)="handleClick(i, true)"
-           (touchend)="handleClick(i)">
-        <span class="name">{{ plan.name }}</span>
-      </div>
+      <ng-container *ngFor="let plan of filteredPlans">
+        <div class="plan" *ngIf="plan.id" (touchstart)="handleClick(plan.id, true)"
+             (touchend)="handleClick(plan.id)">
+          <span class="name">{{ plan.name }}</span>
+        </div>
+      </ng-container>
     </div>
   </ng-container>
 </app-content>

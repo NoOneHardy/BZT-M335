@@ -1,7 +1,7 @@
 import {inject, Injectable} from '@angular/core'
 import {Machine} from '../model/machine'
-import {Exercise} from '../model/exercise'
 import {PlanService} from './plan.service'
+import {ExerciseTemplate} from '../model/exercise-template'
 
 @Injectable({
   providedIn: 'root'
@@ -9,49 +9,52 @@ import {PlanService} from './plan.service'
 export class PlanDataService {
   private planService = inject(PlanService)
 
-  private data: {
-    name?: string
-    machines: Machine[]
-    exercises: Exercise[]
-  } = {
-    machines: [],
-    exercises: []
+  private _name: string | null = null
+  private _machines: Machine[] = []
+  private _exercises: ExerciseTemplate[] = []
+
+  get machines(): Machine[] {
+    return this._machines
   }
 
-  getMachines(): Machine[] {
-    return this.data.machines
+  set machines(machines: Machine[]) {
+    this._machines = machines
   }
 
-  setMachines(machines: Machine[]) {
-    this.data.machines = machines
-    this.data.exercises = []
+  set name(name: string) {
+    this._name = name
   }
 
-  setName(name: string) {
-    this.data.name = name
+  get name(): string | null {
+    return this._name
   }
 
-  setExercise(exercise: Exercise) {
-    const index = this.data.exercises.findIndex(e => e.name === exercise.name)
-    if (index < 0) {
-      this.data.exercises.push(exercise)
-    } else {
-      this.data.exercises[index] = exercise
-    }
+  get exercises(): ExerciseTemplate[] {
+    return this._exercises
+  }
+
+  set exercises(exercises: ExerciseTemplate[]) {
+    this._exercises = exercises
   }
 
   save() {
-    if (this.data.name && this.data.exercises.length > 0) {
+    const name = this.name
+    const exercises = this.exercises
+    if (name && exercises.length > 0) {
       this.planService.addPlan({
-        name: this.data.name,
-        exercises: this.data.exercises,
-        last_training: null
+        id: null,
+        name: name,
+        exercises: exercises,
+        lastTraining: null
       })
 
-      this.data = {
-        machines: [],
-        exercises: []
-      }
+      this.reset()
     }
+  }
+
+  reset() {
+    this._name = null
+    this.machines = []
+    this.exercises = []
   }
 }

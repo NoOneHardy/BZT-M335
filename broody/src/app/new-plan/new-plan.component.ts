@@ -81,8 +81,8 @@ export class NewPlanComponent implements OnInit, OnDestroy {
   submit() {
     if (this.form.invalid || this.selectedMachines.length < 1) return
 
-    this.planDataService.setName(this.form.controls.name.value)
-    this.planDataService.setMachines(this.selectedMachines)
+    this.planDataService.name = this.form.controls.name.value
+    this.planDataService.machines = this.selectedMachines
 
     this.router.navigateByUrl('/plan/config/machines').then()
   }

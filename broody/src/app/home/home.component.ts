@@ -35,15 +35,14 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.planService.getPlans().subscribe(plans => {
-      this.plans = plans.filter(plan => plan.last_training).sort((a, b) => {
-        if (!a.last_training || !b.last_training) return 0
-        return a.last_training < b.last_training ? -1 : 1
+      this.plans = plans.filter(plan => plan.lastTraining).sort((a, b) => {
+        if (!a.lastTraining || !b.lastTraining) return 0
+        return a.lastTraining < b.lastTraining ? -1 : 1
       }).slice(0, 5)
     })
   }
 
   start(plan: Plan) {
-    const index = this.plans.findIndex(p => p === plan)
-    if (index >= 0) this.trainingService.start(plan, index)
+    if (plan.id) this.trainingService.start(plan.id)
   }
 }

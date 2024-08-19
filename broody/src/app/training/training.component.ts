@@ -7,9 +7,8 @@ import {SwipeService} from '../services/swipe.service'
 import {ExerciseComponent} from './exercise/exercise.component'
 import {ConfigComponent} from './config/config.component'
 import {Router} from '@angular/router'
-import {TemplateSet} from '../model/template-set'
-import {Set} from '../model/set'
-import {PlanService} from '../services/plan.service'
+import {Training} from '../model/training'
+import {SetTemplate} from '../model/set-template'
 
 @Component({
   selector: 'app-training',
@@ -26,11 +25,10 @@ import {PlanService} from '../services/plan.service'
 })
 export class TrainingComponent implements OnInit {
   private trainingService = inject(TrainingService)
-  private planService = inject(PlanService)
   private swipeService = inject(SwipeService)
   private router = inject(Router)
 
-  training = this.trainingService.training
+  training: Training | null = this.trainingService.training
   activeExercise = 0
 
   ngOnInit() {
@@ -78,56 +76,15 @@ export class TrainingComponent implements OnInit {
     return this.activeExercise == this.training.exercises.length - 1
   }
 
-  valueChanges(set: Set, eIndex: number, setIndex: number) {
-    if (!this.training) return
-
-    const sets = [...this.training.exercises[eIndex].sets]
-    sets[setIndex] = set
-
-    this.trainingService.setExercise({
-       name: this.training.plan.name,
-       sets: sets
-    })
+  valueChanges() {
+    // TODO: Implement method
   }
 
   save() {
-    const index = this.trainingService.trainingIndex
-    console.log(index)
-    if (index == undefined || this.training == undefined) return
-
-    this.planService.setPlan({
-      name: this.training.plan.name,
-      last_training: this.training.plan.last_training,
-      exercises: this.training.plan.exercises.map((exercise, eIndex): Exercise => {
-        return {
-          name: exercise.name,
-          sets: exercise.sets.map((set, sIndex): TemplateSet => {
-            return {
-              configurations: set.configurations.map((config, cIndex) => {
-                if (config.name === 'Gewicht') {
-                  return {
-                    name: config.name,
-                    value: this.training?.exercises[eIndex].sets[sIndex].configurations[cIndex].value ?? 0,
-                    suffix: config.suffix
-                  }
-                }
-
-                return {
-                  name: config.name,
-                  value: config.value ?? 0,
-                  suffix: config.suffix
-                }
-              })
-            }
-          })
-        }
-      })
-    }, index)
-
-    this.router.navigateByUrl('/').then()
+    // TODO: Implement method
   }
 
-  filterConfigurations(set: TemplateSet) {
+  filterConfigurations(set: SetTemplate) {
     return set.configurations.filter(c => c.value)
   }
 }

@@ -1,50 +1,69 @@
 import {inject, Injectable} from '@angular/core'
-import {Plan} from '../model/plan'
 import {Training} from '../model/training'
 import {Router} from '@angular/router'
-import {Set} from '../model/set'
+import {ExerciseTemplate} from '../model/exercise-template'
+import {Exercise} from '../model/exercise'
+import {PlanService} from './plan.service'
+import {Subject} from 'rxjs'
 
 @Injectable({
   providedIn: 'root'
 })
 export class TrainingService {
   private router = inject(Router)
+  private planService = inject(PlanService)
 
-  private _training?: Training
-  private _trainingIndex?: number
+  private _training: Training | null = null
 
-  get training() {
+  private set training(training: Training | null) {
+    this._training = training
+  }
+
+  get training(): Training | null {
     return this._training
   }
 
-  get trainingIndex() {
-    return this._trainingIndex
-  }
+  start(id: string) {
+    // Create subject to notify parent method whether start was successful or not
+    const ready = new Subject<boolean>()
 
-  start(plan: Plan, index: number) {
-    this._training = {
-      plan: plan,
-      exercises: [...plan.exercises]
-    }
-    this._training.plan.last_training = (new Date()).toString()
-    this._trainingIndex = index
+    // Get plan
+    const sub = this.planService.getPlan(id).subscribe(plan => {
+      // Notify parent that start failed if no plan was found
+      if (!plan) {
+        ready.next(false)
+        return
+      }
 
-    this.router.navigateByUrl('/training').then()
+      const today = new Date()
+      plan.lastTraining = today.valueOf()
+
+      this.training = {
+        id: null,
+        plan: plan,
+        exercises: this.mapExercisesFromTemplate(plan.exercises)
+      }
+
+      // Notify parent process
+      ready.next(true)
+
+      this.router.navigateByUrl('/training').then()
+      sub.unsubscribe()
+    })
+
+    return ready
   }
 
   reset() {
-    this._training = undefined
+    this.training = null
   }
 
-  setExercise(exercise: {
-    name: string
-    sets: Set[]
-  }) {
-    if (!this._training) return
-
-    const i = this._training.exercises.findIndex(e => e.name === exercise.name)
-    if (i < 0) return
-
-    this._training.exercises[i] = exercise
+  mapExercisesFromTemplate(templates: ExerciseTemplate[]): Exercise[] {
+    return templates.map(template => {
+      return {
+        template: template,
+        sets: []
+      }
+    })
   }
 }
