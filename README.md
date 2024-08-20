@@ -41,3 +41,7 @@ ionic cap open android
 ```shell
 ionic serve
 ```
+
+## Documentation
+
+The documentation is located in the [```docs```](./docs) folder.
