@@ -2,16 +2,21 @@
 
 2024-25 | Modul 335 | Mobile-Applikation realisieren
 
-> **Important**  
-> This app works on android 14.0.  
-> It requires an internet connection to load data.
+***
+> **Important**
+
+**JDK 17** is required for setup  
+This app works on **Android 14.0**  
+It requires an **internet connection** to load data.
+
+***
 
 ## Setup
 
 **Install Ionic CLI globally**
 
 ```shell
-npm i -g @ionic/cli native-run cordova-res
+npm i -g @ionic/cli@7.2.0 native-run cordova-res
 ```
 
 **Install npm packages**
