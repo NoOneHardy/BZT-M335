@@ -36,7 +36,7 @@ export class NewPlanComponent implements OnInit, OnDestroy {
   form = new FormGroup({
     name: new FormControl<string>('', {
       nonNullable: true,
-      validators: [Validators.required, Validators.minLength(3)]
+      validators: [Validators.required]
     }),
     search: new FormControl<string>('', {
       nonNullable: true
