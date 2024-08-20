@@ -34,6 +34,11 @@ The app design has a theme color which depends on the battery level of the phone
 | \>= 75%        | green       |
 | charging       | blue        |
 
+**Marketing**
+
+This app is available in the store, but since it is designed for one specific gym company, I don't expect thousands of users.  
+The main goal of broody is to replace roody in order to fix a bugs the original developer won't fix.
+
 ## Home
 
 The home view provides a list with the user's last 5 trainings so one can start them right away.  
