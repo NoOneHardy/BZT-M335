@@ -16,6 +16,7 @@
 | 11 | Search for plans in "Overview Component"       | 19.08.2024 | true    |
 | 12 | Search for machines in "New Plan Component"    | 19.08.2024 | true    |
 | 13 | Delete a plan                                  | 19.08.2024 | true    |
+| 14 | Mobile Panorama                                | 20.08.2024 | false   |
 
 ## Tests
 
@@ -133,3 +134,10 @@ The user can search for machines using the input on top of the list.
 
 **Result**
 Plans can be deleted by pressing on them for 3 seconds.
+
+### Mobile Panorama
+
+> It should not rotate if user is holding their phone in panorama orientation
+
+**Result**  
+The phone rotates, but this is not considered as a fatal bug since the user can always rotate their phone back to portrait orientation
